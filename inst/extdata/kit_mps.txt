@@ -1,0 +1,679 @@
+Panel	Marker	Allele	Size	Short.Name
+ForenSeqUAS	D1S1656	9	141	ForenSeq
+ForenSeqUAS	D1S1656	10	145	ForenSeq
+ForenSeqUAS	D1S1656	11	149	ForenSeq
+ForenSeqUAS	D1S1656	12	153	ForenSeq
+ForenSeqUAS	D1S1656	13	157	ForenSeq
+ForenSeqUAS	D1S1656	13.3	160	ForenSeq
+ForenSeqUAS	D1S1656	14	161	ForenSeq
+ForenSeqUAS	D1S1656	14.3	164	ForenSeq
+ForenSeqUAS	D1S1656	15	165	ForenSeq
+ForenSeqUAS	D1S1656	15.3	168	ForenSeq
+ForenSeqUAS	D1S1656	16	169	ForenSeq
+ForenSeqUAS	D1S1656	16.3	172	ForenSeq
+ForenSeqUAS	D1S1656	17	173	ForenSeq
+ForenSeqUAS	D1S1656	17.1	174	ForenSeq
+ForenSeqUAS	D1S1656	17.3	176	ForenSeq
+ForenSeqUAS	D1S1656	18	177	ForenSeq
+ForenSeqUAS	D1S1656	18.3	180	ForenSeq
+ForenSeqUAS	D1S1656	19	181	ForenSeq
+ForenSeqUAS	D1S1656	19.3	184	ForenSeq
+ForenSeqUAS	D1S1656	20	185	ForenSeq
+ForenSeqUAS	D1S1656	20.3	188	ForenSeq
+ForenSeqUAS	D1S1656	21	189	ForenSeq
+ForenSeqUAS	TPOX	4	61	ForenSeq
+ForenSeqUAS	TPOX	5	65	ForenSeq
+ForenSeqUAS	TPOX	6	69	ForenSeq
+ForenSeqUAS	TPOX	7	73	ForenSeq
+ForenSeqUAS	TPOX	7.3	76	ForenSeq
+ForenSeqUAS	TPOX	8	77	ForenSeq
+ForenSeqUAS	TPOX	9	81	ForenSeq
+ForenSeqUAS	TPOX	10	85	ForenSeq
+ForenSeqUAS	TPOX	10.1	86	ForenSeq
+ForenSeqUAS	TPOX	10.3	88	ForenSeq
+ForenSeqUAS	TPOX	11	89	ForenSeq
+ForenSeqUAS	TPOX	12	93	ForenSeq
+ForenSeqUAS	TPOX	13	97	ForenSeq
+ForenSeqUAS	TPOX	13.1	98	ForenSeq
+ForenSeqUAS	TPOX	14	101	ForenSeq
+ForenSeqUAS	TPOX	15	105	ForenSeq
+ForenSeqUAS	TPOX	16	109	ForenSeq
+ForenSeqUAS	D2S441	8	144	ForenSeq
+ForenSeqUAS	D2S441	9	148	ForenSeq
+ForenSeqUAS	D2S441	10	152	ForenSeq
+ForenSeqUAS	D2S441	11	156	ForenSeq
+ForenSeqUAS	D2S441	11.3	159	ForenSeq
+ForenSeqUAS	D2S441	12	160	ForenSeq
+ForenSeqUAS	D2S441	12.3	163	ForenSeq
+ForenSeqUAS	D2S441	13	164	ForenSeq
+ForenSeqUAS	D2S441	13.3	167	ForenSeq
+ForenSeqUAS	D2S441	14	168	ForenSeq
+ForenSeqUAS	D2S441	14.3	171	ForenSeq
+ForenSeqUAS	D2S441	15	172	ForenSeq
+ForenSeqUAS	D2S441	16	176	ForenSeq
+ForenSeqUAS	D2S441	17	180	ForenSeq
+ForenSeqUAS	D2S1338	11	114	ForenSeq
+ForenSeqUAS	D2S1338	12	118	ForenSeq
+ForenSeqUAS	D2S1338	13	122	ForenSeq
+ForenSeqUAS	D2S1338	14	126	ForenSeq
+ForenSeqUAS	D2S1338	15	130	ForenSeq
+ForenSeqUAS	D2S1338	16	134	ForenSeq
+ForenSeqUAS	D2S1338	17	138	ForenSeq
+ForenSeqUAS	D2S1338	18	142	ForenSeq
+ForenSeqUAS	D2S1338	19	146	ForenSeq
+ForenSeqUAS	D2S1338	19.3	149	ForenSeq
+ForenSeqUAS	D2S1338	20	150	ForenSeq
+ForenSeqUAS	D2S1338	21	154	ForenSeq
+ForenSeqUAS	D2S1338	22	158	ForenSeq
+ForenSeqUAS	D2S1338	23	162	ForenSeq
+ForenSeqUAS	D2S1338	23.2	164	ForenSeq
+ForenSeqUAS	D2S1338	23.3	165	ForenSeq
+ForenSeqUAS	D2S1338	24	166	ForenSeq
+ForenSeqUAS	D2S1338	25	170	ForenSeq
+ForenSeqUAS	D2S1338	26	174	ForenSeq
+ForenSeqUAS	D2S1338	28	182	ForenSeq
+ForenSeqUAS	D3S1358	8	138	ForenSeq
+ForenSeqUAS	D3S1358	8.3	141	ForenSeq
+ForenSeqUAS	D3S1358	9	142	ForenSeq
+ForenSeqUAS	D3S1358	10	146	ForenSeq
+ForenSeqUAS	D3S1358	11	150	ForenSeq
+ForenSeqUAS	D3S1358	12	154	ForenSeq
+ForenSeqUAS	D3S1358	13	158	ForenSeq
+ForenSeqUAS	D3S1358	14	162	ForenSeq
+ForenSeqUAS	D3S1358	14.3	165	ForenSeq
+ForenSeqUAS	D3S1358	15	166	ForenSeq
+ForenSeqUAS	D3S1358	15.1	167	ForenSeq
+ForenSeqUAS	D3S1358	15.2	168	ForenSeq
+ForenSeqUAS	D3S1358	15.3	169	ForenSeq
+ForenSeqUAS	D3S1358	16	170	ForenSeq
+ForenSeqUAS	D3S1358	16.2	172	ForenSeq
+ForenSeqUAS	D3S1358	17	174	ForenSeq
+ForenSeqUAS	D3S1358	17.1	175	ForenSeq
+ForenSeqUAS	D3S1358	17.2	176	ForenSeq
+ForenSeqUAS	D3S1358	18	178	ForenSeq
+ForenSeqUAS	D3S1358	18.1	179	ForenSeq
+ForenSeqUAS	D3S1358	18.2	180	ForenSeq
+ForenSeqUAS	D3S1358	18.3	181	ForenSeq
+ForenSeqUAS	D3S1358	19	182	ForenSeq
+ForenSeqUAS	D4S2408	8	93	ForenSeq
+ForenSeqUAS	D4S2408	9	97	ForenSeq
+ForenSeqUAS	D4S2408	10	101	ForenSeq
+ForenSeqUAS	D4S2408	11	105	ForenSeq
+ForenSeqUAS	D4S2408	12	109	ForenSeq
+ForenSeqUAS	D4S2408	13	113	ForenSeq
+ForenSeqUAS	D4S2408	14	117	ForenSeq
+ForenSeqUAS	D4S2408	15	121	ForenSeq
+ForenSeqUAS	D4S2408	16	125	ForenSeq
+ForenSeqUAS	D4S2408	17	129	ForenSeq
+ForenSeqUAS	FGA	12.2	150	ForenSeq
+ForenSeqUAS	FGA	13	152	ForenSeq
+ForenSeqUAS	FGA	13.2	154	ForenSeq
+ForenSeqUAS	FGA	14	156	ForenSeq
+ForenSeqUAS	FGA	14.3	159	ForenSeq
+ForenSeqUAS	FGA	15	160	ForenSeq
+ForenSeqUAS	FGA	15.3	163	ForenSeq
+ForenSeqUAS	FGA	16	164	ForenSeq
+ForenSeqUAS	FGA	16.1	165	ForenSeq
+ForenSeqUAS	FGA	16.2	166	ForenSeq
+ForenSeqUAS	FGA	17	168	ForenSeq
+ForenSeqUAS	FGA	17.1	169	ForenSeq
+ForenSeqUAS	FGA	17.2	170	ForenSeq
+ForenSeqUAS	FGA	18	172	ForenSeq
+ForenSeqUAS	FGA	18.1	173	ForenSeq
+ForenSeqUAS	FGA	18.2	174	ForenSeq
+ForenSeqUAS	FGA	19	176	ForenSeq
+ForenSeqUAS	FGA	19.1	177	ForenSeq
+ForenSeqUAS	FGA	19.2	178	ForenSeq
+ForenSeqUAS	FGA	19.3	179	ForenSeq
+ForenSeqUAS	FGA	20	180	ForenSeq
+ForenSeqUAS	FGA	20.1	181	ForenSeq
+ForenSeqUAS	FGA	20.2	182	ForenSeq
+ForenSeqUAS	FGA	20.3	183	ForenSeq
+ForenSeqUAS	FGA	21	184	ForenSeq
+ForenSeqUAS	FGA	21.1	185	ForenSeq
+ForenSeqUAS	FGA	21.2	186	ForenSeq
+ForenSeqUAS	FGA	21.3	187	ForenSeq
+ForenSeqUAS	FGA	22	188	ForenSeq
+ForenSeqUAS	FGA	22.1	189	ForenSeq
+ForenSeqUAS	FGA	22.2	190	ForenSeq
+ForenSeqUAS	FGA	22.3	191	ForenSeq
+ForenSeqUAS	FGA	23	192	ForenSeq
+ForenSeqUAS	FGA	23.1	193	ForenSeq
+ForenSeqUAS	FGA	23.2	194	ForenSeq
+ForenSeqUAS	FGA	23.3	195	ForenSeq
+ForenSeqUAS	FGA	24	196	ForenSeq
+ForenSeqUAS	FGA	24.1	197	ForenSeq
+ForenSeqUAS	FGA	24.2	198	ForenSeq
+ForenSeqUAS	FGA	24.3	199	ForenSeq
+ForenSeqUAS	FGA	25	200	ForenSeq
+ForenSeqUAS	FGA	25.1	201	ForenSeq
+ForenSeqUAS	FGA	25.2	202	ForenSeq
+ForenSeqUAS	FGA	25.3	203	ForenSeq
+ForenSeqUAS	FGA	26	204	ForenSeq
+ForenSeqUAS	FGA	26.1	205	ForenSeq
+ForenSeqUAS	FGA	26.2	206	ForenSeq
+ForenSeqUAS	FGA	26.3	207	ForenSeq
+ForenSeqUAS	FGA	27	208	ForenSeq
+ForenSeqUAS	FGA	27.1	209	ForenSeq
+ForenSeqUAS	FGA	27.2	210	ForenSeq
+ForenSeqUAS	FGA	27.3	211	ForenSeq
+ForenSeqUAS	FGA	28	212	ForenSeq
+ForenSeqUAS	FGA	28.1	213	ForenSeq
+ForenSeqUAS	FGA	28.2	214	ForenSeq
+ForenSeqUAS	FGA	29	216	ForenSeq
+ForenSeqUAS	FGA	29.1	217	ForenSeq
+ForenSeqUAS	FGA	29.2	218	ForenSeq
+ForenSeqUAS	FGA	30	220	ForenSeq
+ForenSeqUAS	FGA	30.2	222	ForenSeq
+ForenSeqUAS	FGA	31	224	ForenSeq
+ForenSeqUAS	FGA	31.2	226	ForenSeq
+ForenSeqUAS	FGA	32	228	ForenSeq
+ForenSeqUAS	FGA	32.1	229	ForenSeq
+ForenSeqUAS	FGA	32.2	230	ForenSeq
+ForenSeqUAS	FGA	33.1	233	ForenSeq
+ForenSeqUAS	FGA	33.2	234	ForenSeq
+ForenSeqUAS	FGA	34.1	237	ForenSeq
+ForenSeqUAS	FGA	34.2	238	ForenSeq
+ForenSeqUAS	FGA	35.2	242	ForenSeq
+ForenSeqUAS	FGA	41.1	265	ForenSeq
+ForenSeqUAS	FGA	41.2	266	ForenSeq
+ForenSeqUAS	FGA	42	268	ForenSeq
+ForenSeqUAS	FGA	42.1	269	ForenSeq
+ForenSeqUAS	FGA	42.2	270	ForenSeq
+ForenSeqUAS	FGA	43.1	273	ForenSeq
+ForenSeqUAS	FGA	43.2	274	ForenSeq
+ForenSeqUAS	FGA	44	276	ForenSeq
+ForenSeqUAS	FGA	44.2	278	ForenSeq
+ForenSeqUAS	FGA	44.3	279	ForenSeq
+ForenSeqUAS	FGA	45	280	ForenSeq
+ForenSeqUAS	FGA	45.1	281	ForenSeq
+ForenSeqUAS	FGA	45.2	282	ForenSeq
+ForenSeqUAS	FGA	46	284	ForenSeq
+ForenSeqUAS	FGA	46.1	285	ForenSeq
+ForenSeqUAS	FGA	46.2	286	ForenSeq
+ForenSeqUAS	FGA	47	288	ForenSeq
+ForenSeqUAS	FGA	47.2	290	ForenSeq
+ForenSeqUAS	FGA	48	292	ForenSeq
+ForenSeqUAS	FGA	48.2	294	ForenSeq
+ForenSeqUAS	FGA	49	296	ForenSeq
+ForenSeqUAS	FGA	49.1	297	ForenSeq
+ForenSeqUAS	FGA	49.2	298	ForenSeq
+ForenSeqUAS	FGA	50.2	302	ForenSeq
+ForenSeqUAS	FGA	50.3	303	ForenSeq
+ForenSeqUAS	FGA	51	304	ForenSeq
+ForenSeqUAS	FGA	51.2	306	ForenSeq
+ForenSeqUAS	D5S818	6	102	ForenSeq
+ForenSeqUAS	D5S818	7	106	ForenSeq
+ForenSeqUAS	D5S818	8	110	ForenSeq
+ForenSeqUAS	D5S818	9	114	ForenSeq
+ForenSeqUAS	D5S818	10	118	ForenSeq
+ForenSeqUAS	D5S818	10.1	119	ForenSeq
+ForenSeqUAS	D5S818	11	122	ForenSeq
+ForenSeqUAS	D5S818	11.1	123	ForenSeq
+ForenSeqUAS	D5S818	12	126	ForenSeq
+ForenSeqUAS	D5S818	12.3	129	ForenSeq
+ForenSeqUAS	D5S818	13	130	ForenSeq
+ForenSeqUAS	D5S818	14	134	ForenSeq
+ForenSeqUAS	D5S818	15	138	ForenSeq
+ForenSeqUAS	D5S818	16	142	ForenSeq
+ForenSeqUAS	D5S818	17	146	ForenSeq
+ForenSeqUAS	D5S818	18	150	ForenSeq
+ForenSeqUAS	CSF1PO	5	85	ForenSeq
+ForenSeqUAS	CSF1PO	6	89	ForenSeq
+ForenSeqUAS	CSF1PO	6.3	92	ForenSeq
+ForenSeqUAS	CSF1PO	7	93	ForenSeq
+ForenSeqUAS	CSF1PO	7.3	96	ForenSeq
+ForenSeqUAS	CSF1PO	8	97	ForenSeq
+ForenSeqUAS	CSF1PO	8.3	100	ForenSeq
+ForenSeqUAS	CSF1PO	9	101	ForenSeq
+ForenSeqUAS	CSF1PO	9.1	102	ForenSeq
+ForenSeqUAS	CSF1PO	9.3	104	ForenSeq
+ForenSeqUAS	CSF1PO	10	105	ForenSeq
+ForenSeqUAS	CSF1PO	10.1	106	ForenSeq
+ForenSeqUAS	CSF1PO	10.2	107	ForenSeq
+ForenSeqUAS	CSF1PO	10.3	108	ForenSeq
+ForenSeqUAS	CSF1PO	11	109	ForenSeq
+ForenSeqUAS	CSF1PO	11.1	110	ForenSeq
+ForenSeqUAS	CSF1PO	11.3	112	ForenSeq
+ForenSeqUAS	CSF1PO	12	113	ForenSeq
+ForenSeqUAS	CSF1PO	12.1	114	ForenSeq
+ForenSeqUAS	CSF1PO	13	117	ForenSeq
+ForenSeqUAS	CSF1PO	14	121	ForenSeq
+ForenSeqUAS	CSF1PO	15	125	ForenSeq
+ForenSeqUAS	CSF1PO	16	129	ForenSeq
+ForenSeqUAS	D6S1043	9	163	ForenSeq
+ForenSeqUAS	D6S1043	10	167	ForenSeq
+ForenSeqUAS	D6S1043	11	171	ForenSeq
+ForenSeqUAS	D6S1043	12	175	ForenSeq
+ForenSeqUAS	D6S1043	13	179	ForenSeq
+ForenSeqUAS	D6S1043	14	183	ForenSeq
+ForenSeqUAS	D6S1043	15	187	ForenSeq
+ForenSeqUAS	D6S1043	16	191	ForenSeq
+ForenSeqUAS	D6S1043	17	195	ForenSeq
+ForenSeqUAS	D6S1043	18	199	ForenSeq
+ForenSeqUAS	D6S1043	19	203	ForenSeq
+ForenSeqUAS	D6S1043	20	207	ForenSeq
+ForenSeqUAS	D6S1043	21	211	ForenSeq
+ForenSeqUAS	D6S1043	22	215	ForenSeq
+ForenSeqUAS	D6S1043	23	219	ForenSeq
+ForenSeqUAS	D6S1043	24	223	ForenSeq
+ForenSeqUAS	D6S1043	25	227	ForenSeq
+ForenSeqUAS	D7S820	5	135	ForenSeq
+ForenSeqUAS	D7S820	5.2	137	ForenSeq
+ForenSeqUAS	D7S820	6	139	ForenSeq
+ForenSeqUAS	D7S820	6.2	141	ForenSeq
+ForenSeqUAS	D7S820	6.3	142	ForenSeq
+ForenSeqUAS	D7S820	7	143	ForenSeq
+ForenSeqUAS	D7S820	7.1	144	ForenSeq
+ForenSeqUAS	D7S820	7.3	146	ForenSeq
+ForenSeqUAS	D7S820	8	147	ForenSeq
+ForenSeqUAS	D7S820	8.1	148	ForenSeq
+ForenSeqUAS	D7S820	8.2	149	ForenSeq
+ForenSeqUAS	D7S820	8.3	150	ForenSeq
+ForenSeqUAS	D7S820	9	151	ForenSeq
+ForenSeqUAS	D7S820	9.1	152	ForenSeq
+ForenSeqUAS	D7S820	9.2	153	ForenSeq
+ForenSeqUAS	D7S820	9.3	154	ForenSeq
+ForenSeqUAS	D7S820	10	155	ForenSeq
+ForenSeqUAS	D7S820	10.1	156	ForenSeq
+ForenSeqUAS	D7S820	10.3	158	ForenSeq
+ForenSeqUAS	D7S820	11	159	ForenSeq
+ForenSeqUAS	D7S820	11.1	160	ForenSeq
+ForenSeqUAS	D7S820	11.3	161	ForenSeq
+ForenSeqUAS	D7S820	12	163	ForenSeq
+ForenSeqUAS	D7S820	12.1	164	ForenSeq
+ForenSeqUAS	D7S820	12.2	165	ForenSeq
+ForenSeqUAS	D7S820	12.3	166	ForenSeq
+ForenSeqUAS	D7S820	13	167	ForenSeq
+ForenSeqUAS	D7S820	13.1	168	ForenSeq
+ForenSeqUAS	D7S820	14	171	ForenSeq
+ForenSeqUAS	D7S820	14.1	172	ForenSeq
+ForenSeqUAS	D7S820	15	175	ForenSeq
+ForenSeqUAS	D7S820	16	179	ForenSeq
+ForenSeqUAS	D8S1179	7	86	ForenSeq
+ForenSeqUAS	D8S1179	8	90	ForenSeq
+ForenSeqUAS	D8S1179	9	94	ForenSeq
+ForenSeqUAS	D8S1179	10	98	ForenSeq
+ForenSeqUAS	D8S1179	10.2	100	ForenSeq
+ForenSeqUAS	D8S1179	11	102	ForenSeq
+ForenSeqUAS	D8S1179	12	106	ForenSeq
+ForenSeqUAS	D8S1179	12.3	109	ForenSeq
+ForenSeqUAS	D8S1179	13	110	ForenSeq
+ForenSeqUAS	D8S1179	14	114	ForenSeq
+ForenSeqUAS	D8S1179	15	118	ForenSeq
+ForenSeqUAS	D8S1179	15.1	119	ForenSeq
+ForenSeqUAS	D8S1179	15.3	121	ForenSeq
+ForenSeqUAS	D8S1179	16	122	ForenSeq
+ForenSeqUAS	D8S1179	17	126	ForenSeq
+ForenSeqUAS	D8S1179	17.1	127	ForenSeq
+ForenSeqUAS	D8S1179	18	130	ForenSeq
+ForenSeqUAS	D8S1179	19	134	ForenSeq
+ForenSeqUAS	D8S1179	20	138	ForenSeq
+ForenSeqUAS	D9S1122	9	108	ForenSeq
+ForenSeqUAS	D9S1122	10	112	ForenSeq
+ForenSeqUAS	D9S1122	11	116	ForenSeq
+ForenSeqUAS	D9S1122	12	120	ForenSeq
+ForenSeqUAS	D9S1122	13	124	ForenSeq
+ForenSeqUAS	D9S1122	14	128	ForenSeq
+ForenSeqUAS	D9S1122	15	132	ForenSeq
+ForenSeqUAS	D9S1122	16	136	ForenSeq
+ForenSeqUAS	D9S1122	17	140	ForenSeq
+ForenSeqUAS	D10S1248	8	128	ForenSeq
+ForenSeqUAS	D10S1248	9	132	ForenSeq
+ForenSeqUAS	D10S1248	10	136	ForenSeq
+ForenSeqUAS	D10S1248	11	140	ForenSeq
+ForenSeqUAS	D10S1248	12	144	ForenSeq
+ForenSeqUAS	D10S1248	13	148	ForenSeq
+ForenSeqUAS	D10S1248	14	152	ForenSeq
+ForenSeqUAS	D10S1248	15	156	ForenSeq
+ForenSeqUAS	D10S1248	16	160	ForenSeq
+ForenSeqUAS	D10S1248	17	164	ForenSeq
+ForenSeqUAS	D10S1248	18	168	ForenSeq
+ForenSeqUAS	D10S1248	19	172	ForenSeq
+ForenSeqUAS	TH01	3	96	ForenSeq
+ForenSeqUAS	TH01	4	100	ForenSeq
+ForenSeqUAS	TH01	5.3	107	ForenSeq
+ForenSeqUAS	TH01	6	108	ForenSeq
+ForenSeqUAS	TH01	6.1	109	ForenSeq
+ForenSeqUAS	TH01	6.3	111	ForenSeq
+ForenSeqUAS	TH01	7	112	ForenSeq
+ForenSeqUAS	TH01	7.1	113	ForenSeq
+ForenSeqUAS	TH01	7.3	115	ForenSeq
+ForenSeqUAS	TH01	8	116	ForenSeq
+ForenSeqUAS	TH01	8.3	119	ForenSeq
+ForenSeqUAS	TH01	9	120	ForenSeq
+ForenSeqUAS	TH01	9.1	121	ForenSeq
+ForenSeqUAS	TH01	9.3	123	ForenSeq
+ForenSeqUAS	TH01	10	124	ForenSeq
+ForenSeqUAS	TH01	10.3	127	ForenSeq
+ForenSeqUAS	TH01	11	128	ForenSeq
+ForenSeqUAS	TH01	12	132	ForenSeq
+ForenSeqUAS	TH01	13.3	139	ForenSeq
+ForenSeqUAS	TH01	14	140	ForenSeq
+ForenSeqUAS	vWA	10	132	ForenSeq
+ForenSeqUAS	vWA	11	136	ForenSeq
+ForenSeqUAS	vWA	13	144	ForenSeq
+ForenSeqUAS	vWA	14	148	ForenSeq
+ForenSeqUAS	vWA	15	152	ForenSeq
+ForenSeqUAS	vWA	15.2	154	ForenSeq
+ForenSeqUAS	vWA	16	156	ForenSeq
+ForenSeqUAS	vWA	16.1	157	ForenSeq
+ForenSeqUAS	vWA	17	160	ForenSeq
+ForenSeqUAS	vWA	18	164	ForenSeq
+ForenSeqUAS	vWA	18.2	166	ForenSeq
+ForenSeqUAS	vWA	18.3	167	ForenSeq
+ForenSeqUAS	vWA	19	168	ForenSeq
+ForenSeqUAS	vWA	20	172	ForenSeq
+ForenSeqUAS	vWA	21	176	ForenSeq
+ForenSeqUAS	vWA	22	180	ForenSeq
+ForenSeqUAS	vWA	23	184	ForenSeq
+ForenSeqUAS	vWA	24	188	ForenSeq
+ForenSeqUAS	vWA	25	192	ForenSeq
+ForenSeqUAS	D12S391	15	237	ForenSeq
+ForenSeqUAS	D12S391	16	241	ForenSeq
+ForenSeqUAS	D12S391	17	245	ForenSeq
+ForenSeqUAS	D12S391	17.3	248	ForenSeq
+ForenSeqUAS	D12S391	18	249	ForenSeq
+ForenSeqUAS	D12S391	18.3	252	ForenSeq
+ForenSeqUAS	D12S391	19	253	ForenSeq
+ForenSeqUAS	D12S391	19.3	256	ForenSeq
+ForenSeqUAS	D12S391	20	257	ForenSeq
+ForenSeqUAS	D12S391	21	261	ForenSeq
+ForenSeqUAS	D12S391	22	265	ForenSeq
+ForenSeqUAS	D12S391	23	269	ForenSeq
+ForenSeqUAS	D12S391	24	273	ForenSeq
+ForenSeqUAS	D12S391	25	277	ForenSeq
+ForenSeqUAS	D12S391	26	281	ForenSeq
+ForenSeqUAS	D13S317	5	138	ForenSeq
+ForenSeqUAS	D13S317	6	142	ForenSeq
+ForenSeqUAS	D13S317	7	146	ForenSeq
+ForenSeqUAS	D13S317	7.1	147	ForenSeq
+ForenSeqUAS	D13S317	8	150	ForenSeq
+ForenSeqUAS	D13S317	8.1	151	ForenSeq
+ForenSeqUAS	D13S317	9	154	ForenSeq
+ForenSeqUAS	D13S317	10	158	ForenSeq
+ForenSeqUAS	D13S317	11	162	ForenSeq
+ForenSeqUAS	D13S317	11.1	163	ForenSeq
+ForenSeqUAS	D13S317	11.3	165	ForenSeq
+ForenSeqUAS	D13S317	12	166	ForenSeq
+ForenSeqUAS	D13S317	13	170	ForenSeq
+ForenSeqUAS	D13S317	13.3	173	ForenSeq
+ForenSeqUAS	D13S317	14	174	ForenSeq
+ForenSeqUAS	D13S317	14.3	177	ForenSeq
+ForenSeqUAS	D13S317	15	178	ForenSeq
+ForenSeqUAS	D13S317	16	182	ForenSeq
+ForenSeqUAS	D13S317	17	186	ForenSeq
+ForenSeqUAS	Penta E	5	362	ForenSeq
+ForenSeqUAS	Penta E	6	367	ForenSeq
+ForenSeqUAS	Penta E	7	372	ForenSeq
+ForenSeqUAS	Penta E	8	377	ForenSeq
+ForenSeqUAS	Penta E	9	382	ForenSeq
+ForenSeqUAS	Penta E	9.1	383	ForenSeq
+ForenSeqUAS	Penta E	9.4	386	ForenSeq
+ForenSeqUAS	Penta E	10	387	ForenSeq
+ForenSeqUAS	Penta E	10.2	389	ForenSeq
+ForenSeqUAS	Penta E	11	392	ForenSeq
+ForenSeqUAS	Penta E	11.4	396	ForenSeq
+ForenSeqUAS	Penta E	12	397	ForenSeq
+ForenSeqUAS	Penta E	12.1	398	ForenSeq
+ForenSeqUAS	Penta E	12.2	399	ForenSeq
+ForenSeqUAS	Penta E	12.3	400	ForenSeq
+ForenSeqUAS	Penta E	13	402	ForenSeq
+ForenSeqUAS	Penta E	13.2	404	ForenSeq
+ForenSeqUAS	Penta E	13.4	406	ForenSeq
+ForenSeqUAS	Penta E	14	407	ForenSeq
+ForenSeqUAS	Penta E	14.4	411	ForenSeq
+ForenSeqUAS	Penta E	15	412	ForenSeq
+ForenSeqUAS	Penta E	15.2	414	ForenSeq
+ForenSeqUAS	Penta E	15.4	416	ForenSeq
+ForenSeqUAS	Penta E	16	417	ForenSeq
+ForenSeqUAS	Penta E	16.4	421	ForenSeq
+ForenSeqUAS	Penta E	17	422	ForenSeq
+ForenSeqUAS	Penta E	17.4	426	ForenSeq
+ForenSeqUAS	Penta E	18	427	ForenSeq
+ForenSeqUAS	Penta E	18.4	431	ForenSeq
+ForenSeqUAS	Penta E	19	432	ForenSeq
+ForenSeqUAS	Penta E	19.4	436	ForenSeq
+ForenSeqUAS	Penta E	20	437	ForenSeq
+ForenSeqUAS	Penta E	20.2	439	ForenSeq
+ForenSeqUAS	Penta E	20.3	440	ForenSeq
+ForenSeqUAS	Penta E	21	442	ForenSeq
+ForenSeqUAS	Penta E	22	447	ForenSeq
+ForenSeqUAS	Penta E	23	452	ForenSeq
+ForenSeqUAS	Penta E	23.4	456	ForenSeq
+ForenSeqUAS	Penta E	24	457	ForenSeq
+ForenSeqUAS	Penta E	26	467	ForenSeq
+ForenSeqUAS	D16S539	4	132	ForenSeq
+ForenSeqUAS	D16S539	5	136	ForenSeq
+ForenSeqUAS	D16S539	6	140	ForenSeq
+ForenSeqUAS	D16S539	7	144	ForenSeq
+ForenSeqUAS	D16S539	8	148	ForenSeq
+ForenSeqUAS	D16S539	8.3	151	ForenSeq
+ForenSeqUAS	D16S539	9	152	ForenSeq
+ForenSeqUAS	D16S539	9.3	155	ForenSeq
+ForenSeqUAS	D16S539	10	156	ForenSeq
+ForenSeqUAS	D16S539	11	160	ForenSeq
+ForenSeqUAS	D16S539	11.3	163	ForenSeq
+ForenSeqUAS	D16S539	12	164	ForenSeq
+ForenSeqUAS	D16S539	12.1	165	ForenSeq
+ForenSeqUAS	D16S539	12.2	166	ForenSeq
+ForenSeqUAS	D16S539	13	168	ForenSeq
+ForenSeqUAS	D16S539	13.1	169	ForenSeq
+ForenSeqUAS	D16S539	13.3	171	ForenSeq
+ForenSeqUAS	D16S539	14	172	ForenSeq
+ForenSeqUAS	D16S539	14.3	175	ForenSeq
+ForenSeqUAS	D16S539	15	176	ForenSeq
+ForenSeqUAS	D16S539	16	180	ForenSeq
+ForenSeqUAS	D17S1301	9	130	ForenSeq
+ForenSeqUAS	D17S1301	10	134	ForenSeq
+ForenSeqUAS	D17S1301	11	138	ForenSeq
+ForenSeqUAS	D17S1301	12	142	ForenSeq
+ForenSeqUAS	D17S1301	13	146	ForenSeq
+ForenSeqUAS	D17S1301	14	150	ForenSeq
+ForenSeqUAS	D17S1301	15	154	ForenSeq
+ForenSeqUAS	D18S51	7	140	ForenSeq
+ForenSeqUAS	D18S51	8	144	ForenSeq
+ForenSeqUAS	D18S51	9	148	ForenSeq
+ForenSeqUAS	D18S51	9.2	150	ForenSeq
+ForenSeqUAS	D18S51	10	152	ForenSeq
+ForenSeqUAS	D18S51	10.2	154	ForenSeq
+ForenSeqUAS	D18S51	11	156	ForenSeq
+ForenSeqUAS	D18S51	11.1	157	ForenSeq
+ForenSeqUAS	D18S51	11.2	158	ForenSeq
+ForenSeqUAS	D18S51	12	160	ForenSeq
+ForenSeqUAS	D18S51	12.2	162	ForenSeq
+ForenSeqUAS	D18S51	12.3	163	ForenSeq
+ForenSeqUAS	D18S51	13	164	ForenSeq
+ForenSeqUAS	D18S51	13.1	165	ForenSeq
+ForenSeqUAS	D18S51	13.2	166	ForenSeq
+ForenSeqUAS	D18S51	13.3	167	ForenSeq
+ForenSeqUAS	D18S51	14	168	ForenSeq
+ForenSeqUAS	D18S51	14.2	170	ForenSeq
+ForenSeqUAS	D18S51	15	172	ForenSeq
+ForenSeqUAS	D18S51	15.1	173	ForenSeq
+ForenSeqUAS	D18S51	15.2	174	ForenSeq
+ForenSeqUAS	D18S51	15.3	175	ForenSeq
+ForenSeqUAS	D18S51	16	176	ForenSeq
+ForenSeqUAS	D18S51	16.1	177	ForenSeq
+ForenSeqUAS	D18S51	16.2	178	ForenSeq
+ForenSeqUAS	D18S51	16.3	179	ForenSeq
+ForenSeqUAS	D18S51	17	180	ForenSeq
+ForenSeqUAS	D18S51	17.1	181	ForenSeq
+ForenSeqUAS	D18S51	17.2	182	ForenSeq
+ForenSeqUAS	D18S51	17.3	183	ForenSeq
+ForenSeqUAS	D18S51	18	184	ForenSeq
+ForenSeqUAS	D18S51	18.1	185	ForenSeq
+ForenSeqUAS	D18S51	18.2	186	ForenSeq
+ForenSeqUAS	D18S51	19	188	ForenSeq
+ForenSeqUAS	D18S51	19.2	190	ForenSeq
+ForenSeqUAS	D18S51	20	192	ForenSeq
+ForenSeqUAS	D18S51	20.1	193	ForenSeq
+ForenSeqUAS	D18S51	20.2	194	ForenSeq
+ForenSeqUAS	D18S51	21	196	ForenSeq
+ForenSeqUAS	D18S51	21.1	197	ForenSeq
+ForenSeqUAS	D18S51	21.2	198	ForenSeq
+ForenSeqUAS	D18S51	22	200	ForenSeq
+ForenSeqUAS	D18S51	22.1	201	ForenSeq
+ForenSeqUAS	D18S51	22.2	202	ForenSeq
+ForenSeqUAS	D18S51	23	204	ForenSeq
+ForenSeqUAS	D18S51	23.1	205	ForenSeq
+ForenSeqUAS	D18S51	23.2	206	ForenSeq
+ForenSeqUAS	D18S51	24	208	ForenSeq
+ForenSeqUAS	D18S51	24.2	210	ForenSeq
+ForenSeqUAS	D18S51	25	212	ForenSeq
+ForenSeqUAS	D18S51	26	216	ForenSeq
+ForenSeqUAS	D18S51	27	220	ForenSeq
+ForenSeqUAS	D18S51	28.1	225	ForenSeq
+ForenSeqUAS	D18S51	28.3	227	ForenSeq
+ForenSeqUAS	D19S433	5.2	154	ForenSeq
+ForenSeqUAS	D19S433	6.2	158	ForenSeq
+ForenSeqUAS	D19S433	7	160	ForenSeq
+ForenSeqUAS	D19S433	8	164	ForenSeq
+ForenSeqUAS	D19S433	9	168	ForenSeq
+ForenSeqUAS	D19S433	10	172	ForenSeq
+ForenSeqUAS	D19S433	11	176	ForenSeq
+ForenSeqUAS	D19S433	11.1	177	ForenSeq
+ForenSeqUAS	D19S433	12	180	ForenSeq
+ForenSeqUAS	D19S433	12.1	181	ForenSeq
+ForenSeqUAS	D19S433	12.2	182	ForenSeq
+ForenSeqUAS	D19S433	13	184	ForenSeq
+ForenSeqUAS	D19S433	13.1	185	ForenSeq
+ForenSeqUAS	D19S433	13.2	186	ForenSeq
+ForenSeqUAS	D19S433	13.3	187	ForenSeq
+ForenSeqUAS	D19S433	14	188	ForenSeq
+ForenSeqUAS	D19S433	14.1	189	ForenSeq
+ForenSeqUAS	D19S433	14.2	190	ForenSeq
+ForenSeqUAS	D19S433	14.3	191	ForenSeq
+ForenSeqUAS	D19S433	15	192	ForenSeq
+ForenSeqUAS	D19S433	15.2	194	ForenSeq
+ForenSeqUAS	D19S433	16	196	ForenSeq
+ForenSeqUAS	D19S433	16.2	198	ForenSeq
+ForenSeqUAS	D19S433	17	200	ForenSeq
+ForenSeqUAS	D19S433	17.2	202	ForenSeq
+ForenSeqUAS	D19S433	18	204	ForenSeq
+ForenSeqUAS	D19S433	18.2	206	ForenSeq
+ForenSeqUAS	D19S433	19	208	ForenSeq
+ForenSeqUAS	D19S433	19.2	210	ForenSeq
+ForenSeqUAS	D19S433	20	212	ForenSeq
+ForenSeqUAS	D20S482	9	125	ForenSeq
+ForenSeqUAS	D20S482	10	129	ForenSeq
+ForenSeqUAS	D20S482	11	133	ForenSeq
+ForenSeqUAS	D20S482	12	137	ForenSeq
+ForenSeqUAS	D20S482	13	141	ForenSeq
+ForenSeqUAS	D20S482	14	145	ForenSeq
+ForenSeqUAS	D20S482	15	149	ForenSeq
+ForenSeqUAS	D20S482	16	153	ForenSeq
+ForenSeqUAS	D20S482	17	157	ForenSeq
+ForenSeqUAS	D20S482	18	161	ForenSeq
+ForenSeqUAS	D20S482	19	165	ForenSeq
+ForenSeqUAS	D21S11	12	158	ForenSeq
+ForenSeqUAS	D21S11	24	206	ForenSeq
+ForenSeqUAS	D21S11	24.2	208	ForenSeq
+ForenSeqUAS	D21S11	24.3	209	ForenSeq
+ForenSeqUAS	D21S11	25	210	ForenSeq
+ForenSeqUAS	D21S11	25.1	211	ForenSeq
+ForenSeqUAS	D21S11	25.2	212	ForenSeq
+ForenSeqUAS	D21S11	25.3	213	ForenSeq
+ForenSeqUAS	D21S11	26	214	ForenSeq
+ForenSeqUAS	D21S11	26.1	215	ForenSeq
+ForenSeqUAS	D21S11	26.2	216	ForenSeq
+ForenSeqUAS	D21S11	27	218	ForenSeq
+ForenSeqUAS	D21S11	27.1	219	ForenSeq
+ForenSeqUAS	D21S11	27.2	220	ForenSeq
+ForenSeqUAS	D21S11	27.3	221	ForenSeq
+ForenSeqUAS	D21S11	28	222	ForenSeq
+ForenSeqUAS	D21S11	28.1	223	ForenSeq
+ForenSeqUAS	D21S11	28.2	224	ForenSeq
+ForenSeqUAS	D21S11	28.3	225	ForenSeq
+ForenSeqUAS	D21S11	29	226	ForenSeq
+ForenSeqUAS	D21S11	29.1	227	ForenSeq
+ForenSeqUAS	D21S11	29.2	228	ForenSeq
+ForenSeqUAS	D21S11	29.3	229	ForenSeq
+ForenSeqUAS	D21S11	30	230	ForenSeq
+ForenSeqUAS	D21S11	30.1	231	ForenSeq
+ForenSeqUAS	D21S11	30.2	232	ForenSeq
+ForenSeqUAS	D21S11	30.3	233	ForenSeq
+ForenSeqUAS	D21S11	31	234	ForenSeq
+ForenSeqUAS	D21S11	31.1	235	ForenSeq
+ForenSeqUAS	D21S11	31.2	236	ForenSeq
+ForenSeqUAS	D21S11	31.3	237	ForenSeq
+ForenSeqUAS	D21S11	32	238	ForenSeq
+ForenSeqUAS	D21S11	32.1	239	ForenSeq
+ForenSeqUAS	D21S11	32.2	240	ForenSeq
+ForenSeqUAS	D21S11	32.3	241	ForenSeq
+ForenSeqUAS	D21S11	33	242	ForenSeq
+ForenSeqUAS	D21S11	33.1	243	ForenSeq
+ForenSeqUAS	D21S11	33.2	244	ForenSeq
+ForenSeqUAS	D21S11	33.3	245	ForenSeq
+ForenSeqUAS	D21S11	34	246	ForenSeq
+ForenSeqUAS	D21S11	34.1	247	ForenSeq
+ForenSeqUAS	D21S11	34.2	248	ForenSeq
+ForenSeqUAS	D21S11	34.3	249	ForenSeq
+ForenSeqUAS	D21S11	35	250	ForenSeq
+ForenSeqUAS	D21S11	35.1	251	ForenSeq
+ForenSeqUAS	D21S11	35.2	252	ForenSeq
+ForenSeqUAS	D21S11	35.3	253	ForenSeq
+ForenSeqUAS	D21S11	36	254	ForenSeq
+ForenSeqUAS	D21S11	36.1	255	ForenSeq
+ForenSeqUAS	D21S11	36.2	256	ForenSeq
+ForenSeqUAS	D21S11	36.3	257	ForenSeq
+ForenSeqUAS	D21S11	37	258	ForenSeq
+ForenSeqUAS	D21S11	37.2	260	ForenSeq
+ForenSeqUAS	D21S11	38	262	ForenSeq
+ForenSeqUAS	D21S11	38.2	264	ForenSeq
+ForenSeqUAS	D21S11	39	266	ForenSeq
+ForenSeqUAS	D21S11	39.2	268	ForenSeq
+ForenSeqUAS	D21S11	40.2	272	ForenSeq
+ForenSeqUAS	D21S11	41.2	276	ForenSeq
+ForenSeqUAS	Penta D	1.1	209	ForenSeq
+ForenSeqUAS	Penta D	1.2	210	ForenSeq
+ForenSeqUAS	Penta D	2.2	215	ForenSeq
+ForenSeqUAS	Penta D	3.2	220	ForenSeq
+ForenSeqUAS	Penta D	4	223	ForenSeq
+ForenSeqUAS	Penta D	5	228	ForenSeq
+ForenSeqUAS	Penta D	6	233	ForenSeq
+ForenSeqUAS	Penta D	6.4	237	ForenSeq
+ForenSeqUAS	Penta D	7	238	ForenSeq
+ForenSeqUAS	Penta D	7.1	239	ForenSeq
+ForenSeqUAS	Penta D	7.4	242	ForenSeq
+ForenSeqUAS	Penta D	8	243	ForenSeq
+ForenSeqUAS	Penta D	8.1	244	ForenSeq
+ForenSeqUAS	Penta D	9	248	ForenSeq
+ForenSeqUAS	Penta D	9.1	249	ForenSeq
+ForenSeqUAS	Penta D	9.4	252	ForenSeq
+ForenSeqUAS	Penta D	10	253	ForenSeq
+ForenSeqUAS	Penta D	10.1	254	ForenSeq
+ForenSeqUAS	Penta D	10.2	255	ForenSeq
+ForenSeqUAS	Penta D	10.3	256	ForenSeq
+ForenSeqUAS	Penta D	11	258	ForenSeq
+ForenSeqUAS	Penta D	11.1	259	ForenSeq
+ForenSeqUAS	Penta D	11.2	260	ForenSeq
+ForenSeqUAS	Penta D	12	263	ForenSeq
+ForenSeqUAS	Penta D	12.1	264	ForenSeq
+ForenSeqUAS	Penta D	12.2	265	ForenSeq
+ForenSeqUAS	Penta D	12.3	266	ForenSeq
+ForenSeqUAS	Penta D	12.4	267	ForenSeq
+ForenSeqUAS	Penta D	13	268	ForenSeq
+ForenSeqUAS	Penta D	13.2	270	ForenSeq
+ForenSeqUAS	Penta D	13.3	271	ForenSeq
+ForenSeqUAS	Penta D	13.4	272	ForenSeq
+ForenSeqUAS	Penta D	14	273	ForenSeq
+ForenSeqUAS	Penta D	14.1	274	ForenSeq
+ForenSeqUAS	Penta D	14.4	277	ForenSeq
+ForenSeqUAS	Penta D	15	278	ForenSeq
+ForenSeqUAS	Penta D	15.1	279	ForenSeq
+ForenSeqUAS	Penta D	17	288	ForenSeq
+ForenSeqUAS	Penta D	18	293	ForenSeq
+ForenSeqUAS	D22S1045	8	193	ForenSeq
+ForenSeqUAS	D22S1045	9	196	ForenSeq
+ForenSeqUAS	D22S1045	10	199	ForenSeq
+ForenSeqUAS	D22S1045	11	202	ForenSeq
+ForenSeqUAS	D22S1045	12	205	ForenSeq
+ForenSeqUAS	D22S1045	13	208	ForenSeq
+ForenSeqUAS	D22S1045	14	211	ForenSeq
+ForenSeqUAS	D22S1045	15	214	ForenSeq
+ForenSeqUAS	D22S1045	16	217	ForenSeq
+ForenSeqUAS	D22S1045	17	220	ForenSeq
+ForenSeqUAS	D22S1045	18	223	ForenSeq
+ForenSeqUAS	D22S1045	19	226	ForenSeq
+ForenSeqUAS	D22S1045	20	229	ForenSeq

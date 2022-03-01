@@ -1,0 +1,22 @@
+Marker	Rule
+CSF1PO	None
+D18S51	None
+D2S441	"Only 13 shifted? - 3.5"?
+D22S1045 None
+SE33	".2 alleles shifted - 7.2"
+D10S1248	None
+D1S1656	".3 alleles shifted - 4.3"
+FGA	None
+D5S818	None
+D7S820	None
+D2S1338	None
+VWA	None
+D8S1179	None
+D13S317	None
+D12S391	None
+D16S539	None
+TPOX	None
+TH01	None
+D19S433	None
+D3S1358	None
+D21S11	".x alleles shifted with - 2.x"

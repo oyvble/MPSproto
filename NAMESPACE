@@ -1,0 +1,12 @@
+importFrom("grDevices", "dev.new", "dev.off", "pdf")
+importFrom("graphics", "abline", "axis", "barplot", "layout", "legend",
+		 "lines", "mtext", "par", "points", "rect", "segments",
+		 "text","hist")
+importFrom("stats", "aggregate", "dbeta", "density", "dgamma", "dgeom",
+		 "dist", "dnorm", "na.omit", "nlm", "pbeta", "pgamma", "qbeta", 
+		 "qgamma", "quantile", "rbeta", "rgamma", "rgeom", "ppoints", "rnorm", 
+		 "runif", "sd", "setNames","coef", "predict","as.formula","model.matrix","lm")
+importFrom("utils", "adist", "head","tail", "read.delim", "read.table")
+useDynLib(MPSproto)
+exportPattern("^[[:alpha:]]+")
+
