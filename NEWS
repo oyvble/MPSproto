@@ -3,7 +3,11 @@
 - Optional to have a dynamic AT (per-sample)?
 
 
-MPSproto v0.7.0 (Release date: 2021-02-2)
+MPSproto v0.7.1 (Release date: 2021-03-02)
+=============================================
+- Removed function getComplement (not used)
+
+MPSproto v0.7.0 (Release date: 2021-02-22)
 =============================================
 - Included tutorial and scripts for calibrating data from paper
 

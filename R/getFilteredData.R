@@ -8,10 +8,6 @@
 #' @param dat Datatable with columns ("SampleName","Locus","Dose")
 #' @param platform MPS or CE
 #' @export 
-
-
-#dat = readRDS("C:\\Users\\oyvbl\\Dropbox\\Forensic\\MPSproject\\MPSproto\\ForenSeq_RebeccaData_Sensitivitydata\\ForenSeq_RebeccaSensitivityData.RDS")
-
 getFilteredData = function(dat, platform="MPS") {
 	#Filter situations where two alleles are too close (this is tailored!)
 	keepInd = rep(TRUE,nrow(dat))
