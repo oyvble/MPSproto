@@ -1,7 +1,7 @@
 #' @title getStutteredSequence 
 #' @description Helpfunction for obtaining different types of stutters 
 #' @param seqs Input sequences
-#' @param type Stutter type. Supports (BW1,BW2,FW1,FW2,DBW1,TBW1,DFW1,FWBW,BWFW)
+#' @param type Stutter type. See getStutterTypeRule for supported types
 #' @param platform Platform type {"MPS","CE"}. NOTE: CE has only consider only some stutter types (BW1,DBW1,FW1)
 #' @export 
 

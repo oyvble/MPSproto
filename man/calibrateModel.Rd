@@ -5,7 +5,7 @@
 \title{calibrateModel}
 \usage{
 calibrateModel(dat, AT = 10, platform = "MPS", locNames = NULL,
-  minStuttOccurence = 3, createPlots = FALSE,
+  minStuttOccurence = 3, stutterTypes = NULL, createPlots = FALSE,
   runMCMCvalidation = FALSE, mleOptions = list(maxIter = 1000, delta =
   0.1, seed = 1, printLevel = 0, penalty = 1, omegaAdj = 0.5),
   mcmcOptions = list(niter = 1e+05, delta = 0.01), verbose = TRUE)
@@ -20,6 +20,8 @@ calibrateModel(dat, AT = 10, platform = "MPS", locNames = NULL,
 \item{locNames}{The order of markers can be specified (otherwise extracted as unique from dataset)}
 
 \item{minStuttOccurence}{Required number of occurence of a particular stutter type (avoiding overfit)}
+
+\item{stutterTypes}{Stutter types. See getStutterTypeRule for supported types}
 
 \item{createPlots}{Whether to create PDF files showing fitted noise model}
 

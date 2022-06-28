@@ -32,7 +32,8 @@ calcLogLikC_prediction = function(par,c, returnOutcome=FALSE) {
   #as.integer(c$nSamples) #number of samples per locus
   #as.integer(c$nAlleles) #number of observed alleles (inlcuding Q)
   #as.integer(c$nGenos) #number of genotype combination (1 contributor)
-  #as.numeric(c$peakHeights) #coverage vector (including Q)
+  #as.numeric(c$peakHeights) #signal intensity vector (including Q)
+  #as.numeric(c$peakHeights2) #Transformation of the signals (used in pdf calculation)
   #as.numeric(c$freq) #frequency vector
   #as.numeric(c$nTyped) #Number of previously typed alleles. Used for theta-correction
   #as.numeric(c$maTyped) #Number of previously typed alleles (per allele). Used for theta-correction
@@ -61,23 +62,27 @@ calcLogLikC_prediction = function(par,c, returnOutcome=FALSE) {
   startIndMarker_nJointCombs = cumsum(c(0,nJointCombs)) 
   nCombs = sum(nJointCombs) #total number of combinations
   
+  #Select C script to run depending on chosen model:
+  model = c$model #chosen model is indicated in c object
+  cfun_allcomb = paste0("loglikPrediction_allcomb_",model)
+  cfun_allcomb2 = paste0("loglikPrediction_allcomb2_",model)
   if(!returnOutcome) {
-    calc = .C("loglikPrediction_allcomb",as.numeric(0), as.integer(c$nJointCombs), c$NOC, c$NOK,
+    calc = .C(cfun_allcomb,as.numeric(0), as.integer(c$nJointCombs), c$NOC, c$NOK,
               as.numeric(par$mx),  as.numeric(par$mu), as.numeric(par$omega), as.numeric(par$beta), as.numeric(theta_Am),
               c$AT,c$fst,c$nNoiseParam,c$noiseSizeWeight,
               c$nLocs, c$nSamples, c$nAlleles, c$startIndMarker_nAlleles, c$startIndMarker_nAllelesReps,
-              c$peakHeights, c$freq, c$nTyped, c$maTyped, c$basepairs,
+              c$peakHeights,c$peakHeights2, c$freq, c$nTyped, c$maTyped, c$basepairs,
               c$nGenos, c$outG1allele, c$outG1contr, c$startIndMarker_outG1allele, c$startIndMarker_outG1contr, 
               c$nStutters, c$stuttFromInd, c$stuttToInd, c$stuttExp , c$startIndMarker_nStutters,
               c$knownGind) 
     ret = calc[[1]] #returning loglik
   } else {
     bigsumVEC = rep(0.0,nCombs)
-    calc = .C("loglikPrediction_allcomb2",as.numeric(bigsumVEC), as.integer(c$nJointCombs), c$NOC, c$NOK,
+    calc = .C(cfun_allcomb2,as.numeric(bigsumVEC), as.integer(c$nJointCombs), c$NOC, c$NOK,
               as.numeric(par$mx),  as.numeric(par$mu), as.numeric(par$omega), as.numeric(par$beta), as.numeric(theta_Am),
               c$AT,c$fst,c$nNoiseParam,c$noiseSizeWeight,
               c$nLocs, c$nSamples, c$nAlleles, c$startIndMarker_nAlleles, c$startIndMarker_nAllelesReps,
-              c$peakHeights, c$freq, c$nTyped, c$maTyped, c$basepairs,
+              c$peakHeights,c$peakHeights2, c$freq, c$nTyped, c$maTyped, c$basepairs,
               c$nGenos, c$outG1allele, c$outG1contr, c$startIndMarker_outG1allele, c$startIndMarker_outG1contr, 
               c$nStutters, c$stuttFromInd, c$stuttToInd, c$stuttExp , c$startIndMarker_nStutters,
               c$knownGind, as.integer(startIndMarker_nJointCombs)) 

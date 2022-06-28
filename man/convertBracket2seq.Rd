@@ -12,5 +12,5 @@ convertBracket2seq(seqs, brksign = c("\\\\[", "\\\\]"))
 \item{brksign}{Bracket format break symbols}
 }
 \description{
-Helpfunction to convert  short bracket format into full length sequence
+Helpfunction to convert bracket format into full length sequence
 }

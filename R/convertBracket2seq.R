@@ -1,5 +1,5 @@
 #' @title convertBracket2seq 
-#' @description Helpfunction to convert  short bracket format into full length sequence
+#' @description Helpfunction to convert bracket format into full length sequence
 #' @param seqs Input sequence in bracket format
 #' @param brksign Bracket format break symbols
 #' @export 

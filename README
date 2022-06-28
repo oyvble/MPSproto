@@ -1,5 +1,13 @@
 MPSproto is a tool which contains a quantitative model for MPS-STR data to deal with complex stutters.
 
+Installation for Windows (http://www.euroformix.com/MPSproto): 
+install.packages('http://www.euroformix.com/sites/default/files/MPSproto_0.8.0.zip',repos=NULL,type='win.binary')
+
+Installation from Github (https://github.com/oyvble/MPSproto):
+install_github("oyvble/MPSproto")
+
+Download zip file from http://www.euroformix.com/MPSproto (windows only) and "install package local ".
+
 Mathematical details of the model and a tutorial for how to use the tool can be found in the doc folder.
 
 The tool was first time mentioned in the discussion of the paper "A comprehensive characterization of STR-MPS stutter artefacts". 

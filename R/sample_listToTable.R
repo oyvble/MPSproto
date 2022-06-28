@@ -11,7 +11,7 @@ sample_listToTable = function(outL) {
   hM = 0   #count number of max allele heights:
   checkElem = outL[[1]][[1]] #check first element
   isEvid = "adata"%in%names(checkElem) #Require adata
-  if(isEvid && !"hdata"%in%checkElem) stop("Missing hdata name in list structure!")
+  if(isEvid && !"hdata"%in%names(checkElem)) stop("Missing hdata name in list structure!")
   hM <- 0 #default is no height data
   for(ss in sn) { #for each sample
     if(isEvid) {

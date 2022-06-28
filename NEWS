@@ -3,15 +3,28 @@
 - Optional to have a dynamic AT (per-sample)?
 
 
-MPSproto v0.7.1 (Release date: 2021-03-02)
+MPSproto v0.8.0 (Release date: 2022-03-15)
+=============================================
+- Implementing Negative Binomial (NB) as an model option in inferEvidence function: model=("GA,"NB")
+ -> Following functions changed: calcLogLikC_prediction, prepareC_prediction, prefit_prediction, validMLE, calcLogLikR_prediction
+ -> C++ now utilizing the function pnbinom_mu for cumulative calculation of NB
+- genMPSevidence: Degradation not possible when generating evidence for MPS
+- fitgammamodel renamed as fitSUMmodel which fits all implemented models (GA/NB).
+
+- Updated functions for stutter calibration:
+-> getStutterData function is more comprehensive (also take minStuttOccurence argument)
+-> getFilteredData replaced by getStutterData
+-> inferStuttRegModel renamed to inferStutterModel
+
+MPSproto v0.7.1 (Release date: 2022-03-02)
 =============================================
 - Removed function getComplement (not used)
 
-MPSproto v0.7.0 (Release date: 2021-02-22)
+MPSproto v0.7.0 (Release date: 2022-02-02)
 =============================================
 - Included tutorial and scripts for calibrating data from paper
 
-MPSproto v0.6 (Release date: 2021-02-14)
+MPSproto v0.6 (Release date: 2022-02-14)
 =============================================
 - Now also supporting CE format (Stutter model for BLMM can be included): getStutterIndex updated
 - Take into account that getStutterIndex returns NULL if none of the alleles can have a certain stutter type 
@@ -19,7 +32,7 @@ MPSproto v0.6 (Release date: 2021-02-14)
  -> getStutterTypeRule: Get motif change and motif rank for given stutter type
  -> genMPSevidence: Used to generate MPS mixture based on a calibrated model
 
-MPSproto v0.5 (Release date: 2021-01-12)
+MPSproto v0.5 (Release date: 2022-01-12)
 =============================================
 - Updated inferStuttRegModel function to also include validation plots. Also supports precision expression.
 

@@ -3,7 +3,7 @@
 #2) Stutter model (already done)
 #3) Noise model
 
-#Note: This script differs from the tutorial since we import aggregated data instead of a full data table
+#Note: This script differs from the tutorial since we import aggregated data and the full data table
 
 library(MPSproto)
 projname = "MPSproto_stutterCharPaper" 

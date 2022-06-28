@@ -6,7 +6,7 @@
 \usage{
 inferEvidence(samples, popFreq, refData = NULL, hypothesis, calibration,
   kit = NULL, platform = "MPS", nDone = 3, delta = 1,
-  steptol = 1e-04, seed = NULL, verbose = FALSE)
+  steptol = 1e-04, seed = NULL, verbose = FALSE, model = "GA")
 }
 \arguments{
 \item{samples}{Sample information for evidence profile(s). Must be a list[[sample]][[loc]] = list(adata,hdata)}
@@ -41,6 +41,8 @@ Reg-coeffs (b0,b1,b2) for different stutter types (each element considers a part
 \item{seed}{The user can set seed if wanted}
 
 \item{verbose}{Whether to print out progress}
+
+\item{model}{Selected model for the signals (read/peak heights): {"GA"=gamma,"NB"=negative binomial}}
 }
 \value{
 Fitted object for evidence (similar as euroformix::contLikMLE)

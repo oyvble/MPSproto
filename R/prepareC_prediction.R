@@ -16,11 +16,12 @@
 #' Reg-coeffs (b0,b1,b2) for different stutter types (each element considers a particular stutter type)
 #' @param kit shortname of kit. Used to model degradation model. Obtained from getMPSkit(). 
 #' @param platform Platform type {"MPS","CE"}. NOTE: CE has only consider only some stutter types (BW1,DBW1,FW1)
+#' @param model Selected model for the signals (read/peak heights): {"GA"=gamma,"NB"=negative binomial}
 #' @return ret A list of data input to call the C-code (used in calcLogLikC_prediction)
 #' @export 
 
 #kit=NULL;platform="MPS"
-prepareC_prediction = function(dat, hypothesis, calibration, kit=NULL, platform="MPS"){
+prepareC_prediction = function(dat, hypothesis, calibration, kit=NULL, platform="MPS",model="GA"){
  Qallele="99" #Name of allele given if missing in evidence (drop-out allele). Defualt is 99. This is important when considering the degradation model since 99 is closest to maximum allelein a locus. 
  #LUSsymbol="_" #a character symbol used to separate repeatunit and LUS.
  MPSsymbol = ":" #Used for extracting CE for MPS strings in evidence data. Example is "10:[ATCG]10".
@@ -359,17 +360,25 @@ prepareC_prediction = function(dat, hypothesis, calibration, kit=NULL, platform=
  #datList[[1]]$outG1contr
  alleleNames = lapply(datList,function(x) x$alleles) #obtain allele names for each marker (only observed)
  names(alleleNames) = locs #insert locus names
+
+ #Special handle peak heights depending on model (pre-transform)
+ if(model=="NB") {
+   peakHeights2 = lgamma(peakHeights+1) 
+ } else if(model=="GA") {
+   peakHeights2 = log(peakHeights)
+   peakHeights2[is.infinite(peakHeights2)] = 0 #will not be used
+ }
  
  retlist = list( NOC=NOC, NOK=NOK, NOU=NOU,knownGind=knownGind, #hypotheseis
               nLocs=nLocs,nSamples=nSamples,nAlleles=nAlleles,nGenos=nGenos, nJointCombs=nJointCombs,#dimensions
-              freq=freq,peakHeights=peakHeights, basepairs=basepairs, markerEfficiency=markerEfficiency,#data
+              freq=freq,peakHeights=peakHeights,peakHeights2=peakHeights2, basepairs=basepairs, markerEfficiency=markerEfficiency,#data
               AT = AT,fst=fst, nTyped=nTyped,maTyped=maTyped, #settings data
               nNoiseParam=nNoiseParam,noiseSizeWeight=noiseSizeWeightPDF,noiseSizeWeightCDF=noiseSizeWeightCDF, #noise model
               nStutters=nStutters,stuttFromInd=stuttFromInd,stuttToInd=stuttToInd,stuttExp=stuttExp,stuttType=stuttType, #stutter info
               startIndMarker_nAlleles=startIndMarker_nAlleles,startIndMarker_nAllelesReps=startIndMarker_nAllelesReps,
               startIndMarker_nStutters=startIndMarker_nStutters,startIndMarker_nGenos=startIndMarker_nGenos, startIndMarker_nJointCombs=startIndMarker_nJointCombs,#cumulative
               outG1allele=outG1allele, outG1contr=outG1contr,startIndMarker_outG1allele=startIndMarker_outG1allele, startIndMarker_outG1contr=startIndMarker_outG1contr,  #contributor matrix
-              locNames=locs,sampleNames=sampleNames,nReps=nReps,Gset=Gset,alleleNames=alleleNames)  #meta info
+              locNames=locs,sampleNames=sampleNames,nReps=nReps,Gset=Gset,alleleNames=alleleNames,model=model)  #meta info
  
  return(retlist)
 } #end function

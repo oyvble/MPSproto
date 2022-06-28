@@ -57,13 +57,17 @@ validMLE <- function(mlefit,plottitle="PP-plot",alpha=0.01,createplot=TRUE,verbo
   }
   #max(abs(noiseSizeWeight1-noiseSizeWeight2))
   
+  #Select C script to run depending on chosen model:
+  model = c$model #chosen model is indicated in c object
+  cfun_cumprob = paste0("loglikPrediction_cumprob_",model)
+
   #obtain cumulative vals int_0^y 
   pvalVEC = c$peakHeights #must have a copy
-  UaPH = .C("loglikPrediction_cumprob",as.numeric(pvalVEC), as.numeric(0), as.integer(c$nJointCombs), c$NOC, c$NOK,
+  UaPH = .C(cfun_cumprob,as.numeric(pvalVEC), as.numeric(0), as.integer(c$nJointCombs), c$NOC, c$NOK,
             as.numeric(par$mx),  as.numeric(par$mu), as.numeric(par$omega), as.numeric(par$beta), as.numeric(theta_Am),
             c$AT,c$fst,c$nNoiseParam,c$noiseSizeWeight, as.numeric(noiseSizeWeight1),
             c$nLocs, c$nSamples, c$nAlleles, c$startIndMarker_nAlleles, c$startIndMarker_nAllelesReps,
-            c$peakHeights, c$freq, c$nTyped, c$maTyped, c$basepairs,
+            c$peakHeights, c$peakHeights2, c$freq, c$nTyped, c$maTyped, c$basepairs,
             c$nGenos, c$outG1allele, c$outG1contr, c$startIndMarker_outG1allele, c$startIndMarker_outG1contr, 
             c$nStutters, c$stuttFromInd, c$stuttToInd, c$stuttExp , c$startIndMarker_nStutters,
             c$knownGind )[[1]] #obtain 
@@ -72,11 +76,11 @@ validMLE <- function(mlefit,plottitle="PP-plot",alpha=0.01,createplot=TRUE,verbo
   #PArt 2/2: Consider evaluation at PH-levels  
   #obtain cumulative vals int_0^inf 
   pvalVEC = c$peakHeights #must have a copy
-  UaMAX = .C("loglikPrediction_cumprob",as.numeric(pvalVEC), as.numeric(maxYobs), as.integer(c$nJointCombs), c$NOC, c$NOK,
+  UaMAX = .C(cfun_cumprob,as.numeric(pvalVEC), as.numeric(maxYobs), as.integer(c$nJointCombs), c$NOC, c$NOK,
              as.numeric(par$mx),  as.numeric(par$mu), as.numeric(par$omega), as.numeric(par$beta), as.numeric(theta_Am),
              c$AT,c$fst,c$nNoiseParam,c$noiseSizeWeight, as.numeric(noiseSizeWeight2),
              c$nLocs, c$nSamples, c$nAlleles, c$startIndMarker_nAlleles, c$startIndMarker_nAllelesReps,
-             c$peakHeights, c$freq, c$nTyped, c$maTyped, c$basepairs,
+             c$peakHeights, c$peakHeights2, c$freq, c$nTyped, c$maTyped, c$basepairs,
              c$nGenos, c$outG1allele, c$outG1contr, c$startIndMarker_outG1allele, c$startIndMarker_outG1contr, 
              c$nStutters, c$stuttFromInd, c$stuttToInd, c$stuttExp , c$startIndMarker_nStutters,
              c$knownGind )[[1]] #obtain 

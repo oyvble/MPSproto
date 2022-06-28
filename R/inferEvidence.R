@@ -24,6 +24,7 @@
 #' @param steptol Argument used in the nlm function for faster return from the optimization (tradeoff is lower accuracy).
 #' @param seed The user can set seed if wanted
 #' @param verbose Whether to print out progress
+#' @param model Selected model for the signals (read/peak heights): {"GA"=gamma,"NB"=negative binomial}
 #' @return Fitted object for evidence (similar as euroformix::contLikMLE)
 #' @export
 #' @examples
@@ -39,18 +40,17 @@
 #' valid = validMLE(fit)
 #' }
 
-inferEvidence = function(samples, popFreq, refData=NULL, hypothesis, calibration,  kit=NULL,platform="MPS", nDone=3, delta=1, steptol=1e-4, seed=NULL, verbose=FALSE) {
+inferEvidence = function(samples, popFreq, refData=NULL, hypothesis, calibration,  kit=NULL,platform="MPS", nDone=3, delta=1, steptol=1e-4, seed=NULL, verbose=FALSE, model="GA") {
   if(!is.null(seed)) set.seed(seed) #set seed if provided
   
   #pre-step to get Q-assignation:
   AT = sapply(calibration,function(x) as.numeric(x$AT)) #obtain AT
   normalize = FALSE
   if(!is.null(hypothesis$normalize) && hypothesis$normalize) normalize = TRUE #assign true if indicated
-  minF = NULL
   dat = prepareData_prediction(samples,refData, popFreq, AT=AT, normalize=normalize, minF=hypothesis$minF)
   
   #call first:
-  c_obj = prepareC_prediction(dat, hypothesis,calibration, kit, platform)  #obtain data to be used
+  c_obj = prepareC_prediction(dat, hypothesis,calibration, kit, platform, model)  #obtain data to be used
   
   #OBTAIN START VALUES FOR PARAMS:
   theta0 = prefit_prediction(c=c_obj) #obtain param start values across the replicates (mu,sigma,beta)
@@ -120,12 +120,12 @@ inferEvidence = function(samples, popFreq, refData=NULL, hypothesis, calibration
       mx_vec[NOC] = 1-sum(mx_vec[-NOC]) #last contributor is 1- sum of mix-prop
     }
     return(list(mx=mx_vec,mu=theta_mu,omega=theta_omega,beta=theta_beta))
-
   }
   
   #function for calling on C-function: Must convert "real domain" values back to model params 
   negloglik_phi <- function(phi) { #assumed order: mixprop(1:C-1),mu,sigma,beta,xi
     parList = convParamBack(phi) #obtain list with parameters (on original scale)
+    #write.table(unlist(parList),file="params.txt",append = TRUE) #USED FOR DEBUGGING NB-model ERROR
     logLik = calcLogLikC_prediction(parList,c_obj)
     #print(calcObj$logLik)
     return( -logLik ) #return negative log-likelihood
@@ -134,7 +134,7 @@ inferEvidence = function(samples, popFreq, refData=NULL, hypothesis, calibration
   #Iterate with several startvalue (mx is random)
   nOK <- 0 #number of times for reaching largest previously seen optimum
   maxL <- -Inf #value of maximum obtained loglik
-  maxITERS <- 30 #number of possible times to be INF or not valid optimum before any acceptance
+  maxITERS <- 100 #number of possible times to be INF or not valid optimum before any acceptance
   nITER <- 0 #number of times beeing INF (invalid value)
   
   logLik_tolerance = 0.01 #tolerance of accepting similar liklihood optimization
@@ -146,7 +146,6 @@ inferEvidence = function(samples, popFreq, refData=NULL, hypothesis, calibration
       phi0 = drawMixprop(NOC) #draw mixture proportions
       phi0 = append(phi0, drawPHvars( theta0 ) )#append with the other params
  # convParamBack(phi0)
-      #Check if proposal is OK
       timeOneCall = system.time({ #estimate the time for calling the likelihood function one time 
         likval <- -negloglik_phi(phi=phi0)   #check if start value was accepted
       })[3] #obtain time in seconds
@@ -207,7 +206,8 @@ inferEvidence = function(samples, popFreq, refData=NULL, hypothesis, calibration
   ret$samples <- ret$popFreq <- ret$refData <- NULL #remove these
   ret$data = dat #include the processed data instead
   ret$prepareC = c_obj
-  
+  ret$model = model #copy model name
+    
   #Return results and data:
   return( ret )
 }

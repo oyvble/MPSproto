@@ -9,7 +9,7 @@ getStutterIndex(seqs, type = "BW1", platform = "MPS", locus = NULL)
 \arguments{
 \item{seqs}{Input sequences}
 
-\item{type}{Stutter type. Supports (BW1,BW2,FW1,FW2,DBW1,FWBW,BWFW)}
+\item{type}{Stutter type. See getStutterTypeRule for supported types}
 
 \item{platform}{Platform type {"MPS","CE"}. NOTE: CE has only LUS based stutter types}
 

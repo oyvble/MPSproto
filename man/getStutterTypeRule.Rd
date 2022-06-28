@@ -14,3 +14,11 @@ getStutterTypeRule(type, platform = "MPS")
 \description{
 Helpfunction to get motifchange for a given stutter type
 }
+\details{
+The nomenlclature for stutters are as follows:
+BW1 means that the LUS motif is providing a backward stutter (n-1).
+FW1 means that the LUS motif is providing a forward stutter (n+1).
+BW2 means that the non-LUS motif is providing a backward stutter (n-1).
+etc... prefix "D" means double (n-2 or n+2)
+n0 stutters are named as either FWBW or BWFW depending on which occuring first in the sequence (hence orientation matters!)
+}

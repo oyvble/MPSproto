@@ -147,7 +147,7 @@ inferEvidence2 = function(mlefit, calibration=NULL, priorAsLN=FALSE, reOpt=FALSE
   
   #Iterate with several startvalue (mx is random)
   nOK <- 0 #number of times for reaching largest previously seen optimum
-  maxITERS <- 30 #number of possible times to be INF or not valid optimum before any acceptance
+  maxITERS <- 100 #number of possible times to be INF or not valid optimum before any acceptance
   nITER <- 0 #number of times beeing INF (invalid value)
   
   maxL <- -Inf #value of maximum obtained loglik

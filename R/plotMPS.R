@@ -14,7 +14,7 @@
 #' @export
 
 #AT=NULL;ST=NULL;grpsymbol="_";locYmax=TRUE;options=NULL;returnOnly=FALSE
-plotMPS = function(mixData,refData=NULL,AT=NULL,ST=NULL,grpsymbol="_",locYmax=TRUE,options=NULL, returnOnly=FALSE) {
+plotMPS = function(mixData,refData=NULL,AT=NULL,ST=NULL,grpsymbol=":",locYmax=TRUE,options=NULL, returnOnly=FALSE) {
  if(is.null(options$h0)) { h0 = 300 } else { h0 = options$h0 } # 5500/nrows #standard height for each dye (depends on number of rows? No)
  if(is.null(options$w0)) { w0 = 1800 } else { w0 = options$w0 } # standard witdh when printing plot
  if(is.null(options$marg0)) { marg0 = 0.015 } else { marg0 = options$marg0 } #Margin between subplots

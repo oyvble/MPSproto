@@ -5,7 +5,7 @@
 \title{plotMPS}
 \usage{
 plotMPS(mixData, refData = NULL, AT = NULL, ST = NULL,
-  grpsymbol = "_", locYmax = TRUE, options = NULL,
+  grpsymbol = ":", locYmax = TRUE, options = NULL,
   returnOnly = FALSE)
 }
 \arguments{

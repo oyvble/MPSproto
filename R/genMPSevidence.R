@@ -145,8 +145,9 @@ genMPSevidence = function(calibration, NOC, popFreq, mu=1000,omega=0.1, beta=1, 
           if(platform=="CE") { #alleles are numeric
             bind <- which.min(abs(as.numeric(allel) - as.numeric(kitinfo_allele))) 
           } else if(platform=="MPS") { #alleles are strings
-            dist = adist(allel,kitinfo_allele) #calculate number of string-missmatches
-            bind <- which.min(dist)[1]
+            #dist = adist(allel,kitinfo_allele) #calculate number of string-missmatches
+            #bind <- which.min(dist)[1]
+			stop("Degradation not implemented yet for MPS")
           } 
         } 
         bp <- c(bp,kitinfo_size[bind]) #get fragment length

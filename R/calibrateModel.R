@@ -8,6 +8,7 @@
 #' @param platform Type of platform. Supports "MPS" or "CE".  
 #' @param locNames The order of markers can be specified (otherwise extracted as unique from dataset)
 #' @param minStuttOccurence Required number of occurence of a particular stutter type (avoiding overfit)
+#' @param stutterTypes Stutter types. See getStutterTypeRule for supported types
 #' @param createPlots Whether to create PDF files showing fitted noise model
 #' @param runMCMCvalidation Boolean of whether to run MCMCvalidation for checking the posterior distributions
 #' @param mleOptions Option input for optimization
@@ -17,7 +18,7 @@
 #' @export
 
 
-calibrateModel = function(dat,AT=10,platform="MPS",locNames=NULL,minStuttOccurence=3,createPlots=FALSE,runMCMCvalidation=FALSE, mleOptions=list(maxIter=1000,delta=.1,seed=1,printLevel=0,penalty=1,omegaAdj=0.5),mcmcOptions=list(niter=100000,delta=0.01),verbose=TRUE) {
+calibrateModel = function(dat,AT=10,platform="MPS",locNames=NULL,minStuttOccurence=3,stutterTypes=NULL,createPlots=FALSE,runMCMCvalidation=FALSE, mleOptions=list(maxIter=1000,delta=.1,seed=1,printLevel=0,penalty=1,omegaAdj=0.5),mcmcOptions=list(niter=100000,delta=0.01),verbose=TRUE) {
   
   #############################################################################
   #Step 0: Insert missing alleles with dose>0 (true alleles) (attached to end)#
@@ -40,13 +41,13 @@ calibrateModel = function(dat,AT=10,platform="MPS",locNames=NULL,minStuttOccuren
   #Step 2: OBTAINING STUTTER PARAMETERS#
   ######################################
   #SEARCH AFTER STUTTER DATA (including index of potential stutters of all types={BW1,DBW1,FW2})
-  dat2 = getFilteredData(dat,platform=platform) #obtain subset of data suitable for extracting stutters
-  stutterData = getStutterData(dat2,platform=platform,verbose=verbose)
+  #dat2 = getFilteredData(dat,platform=platform) #obtain subset of data suitable for extracting stutters
+  stutterData = getStutterData(dat,platform=platform,verbose=verbose,minStuttOccurence=minStuttOccurence,stutterTypes=stutterTypes)
 
   #Infer STUTTER MODELS BASED ON INFO FROM STEP 1 (one marker at the time):
   pdffile = "StutterModel" #name of pdf to be printed
   if(!createPlots) pdffile=NULL
-  stuttMod = inferStuttRegModel(stutterData$stutterdata, minStuttOccurence=minStuttOccurence,print2pdf=pdffile)
+  stuttMod = inferStutterModel(stutterData$stutterdata,print2pdf=pdffile)
   stuttModTab = stuttMod$betaTable #obtain coefficient table
   
   stuttModList = list()
@@ -66,7 +67,6 @@ calibrateModel = function(dat,AT=10,platform="MPS",locNames=NULL,minStuttOccuren
   pdffile = "NoiseModel" #name of pdf to be printed
   if(!createPlots) pdffile=NULL
 	noiseMod = inferNoiseModel(sampleNames=unique(dat$SampleName), locNames=unique(dat$Locus), noisedata=stutterData$noisedata, AT=AT,print2pdf=pdffile)
-
 
   #FINALLY INSERT EVERYTHING TO ONE OBJECT
   calibration = list()

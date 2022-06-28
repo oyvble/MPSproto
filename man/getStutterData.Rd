@@ -4,15 +4,17 @@
 \alias{getStutterData}
 \title{getStutterData}
 \usage{
-getStutterData(dat, stutterTypes = NULL, platform = "MPS",
-  verbose = FALSE)
+getStutterData(dat, minStuttOccurence = 5, platform = "MPS",
+  stutterTypes = NULL, verbose = FALSE)
 }
 \arguments{
 \item{dat}{Datatable with columns (RefName,SampleName,Locus,Allele,Coverage,Dose)}
 
-\item{stutterTypes}{Stutter types. Supports (BW1,BW2,FW1,FW2,DBW1,TBW1,FWBW,BWFW). Also special -2bp stutters for CE}
+\item{minStuttOccurence}{The number of required observations per stutter type (remaining put to noise)}
 
 \item{platform}{Platform type {"MPS","CE"}. NOTE: CE has only consider only some stutter types (but also include -2bp)}
+
+\item{stutterTypes}{Stutter types. See getStutterTypeRule for supported types}
 
 \item{verbose}{Whether to print out progress}
 }
@@ -20,6 +22,7 @@ getStutterData(dat, stutterTypes = NULL, platform = "MPS",
 helpfunction to obtain stutter data table used for making inference
 }
 \details{
+Does not require getFilteredData first anymore
 The nomenlclature for stutters are as follows:
 BW1 means that the LUS motif is providing a backward stutter (n-1).
 FW1 means that the LUS motif is providing a forward stutter (n+1).

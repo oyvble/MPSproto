@@ -21,6 +21,9 @@ c$nAlleles = as.integer(9 )
 c$startIndMarker_nAlleles = as.integer(0)
 c$startIndMarker_nAllelesReps = as.integer(0)
 c$peakHeights = c(500, 1044, 1225, 13733, 18, 3199, 13332, 280, 0)
+c$peakHeights2 = log(c$peakHeights)
+c$peakHeights2[is.infinite(c$peakHeights2)] = 0 #will not be used
+
 c$freq = c( 0.10679612, 0.23023578, 0.14840499, 0.09292649, 0.01109570, 0.10957004, 0.13869626, 0.01664355, 0.14563107)
 c$nTyped = 2
 c$maTyped =  c(0, 1, 0, 1, 0, 0, 2, 0, 0)
@@ -39,16 +42,14 @@ c$startIndMarker_nStutters <- c$startIndMarker_outG1allele <- c$startIndMarker_o
 
 c$knownGind = as.integer(c(14,27))
 
-
-calc = .C("loglikPrediction_allcomb",as.numeric(0), c$nJointCombs,as.integer(c$NOC), as.integer(c$NOK),
+#GAMMA MODEL
+calc = .C("loglikPrediction_allcomb_GA",as.numeric(0), c$nJointCombs,as.integer(c$NOC), as.integer(c$NOK),
           as.numeric(par$mx),  as.numeric(par$mu), as.numeric(par$omega), as.numeric(par$beta), as.numeric(theta_Am),
           as.numeric(c$AT),as.numeric(c$fst),as.numeric(c$nNoiseParam),as.numeric(c$noiseSizeWeight),
           c$nLocs, c$nSamples, c$nAlleles, c$startIndMarker_nAlleles, c$startIndMarker_nAllelesReps,
-          c$peakHeights, c$freq, c$nTyped, c$maTyped, c$basepairs,
+          c$peakHeights, c$peakHeights2, c$freq, c$nTyped, c$maTyped, c$basepairs,
           c$nGenos, c$outG1allele, c$outG1contr, c$startIndMarker_outG1allele, c$startIndMarker_outG1contr,
           c$nStutters, c$stuttFromInd, c$stuttToInd, c$stuttExp , c$startIndMarker_nStutters,
           c$knownGind)
 
-
-print(calc[[1]])
-
+expect_equal(round(calc[[1]],3),-66.833)

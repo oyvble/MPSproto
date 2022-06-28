@@ -5,7 +5,7 @@
 \title{prepareC_prediction}
 \usage{
 prepareC_prediction(dat, hypothesis, calibration, kit = NULL,
-  platform = "MPS")
+  platform = "MPS", model = "GA")
 }
 \arguments{
 \item{dat}{A list returned from prepareData_prediction function (includes evididence,reference,frequency data)}
@@ -26,6 +26,8 @@ Reg-coeffs (b0,b1,b2) for different stutter types (each element considers a part
 \item{kit}{shortname of kit. Used to model degradation model. Obtained from getMPSkit().}
 
 \item{platform}{Platform type {"MPS","CE"}. NOTE: CE has only consider only some stutter types (BW1,DBW1,FW1)}
+
+\item{model}{Selected model for the signals (read/peak heights): {"GA"=gamma,"NB"=negative binomial}}
 }
 \value{
 ret A list of data input to call the C-code (used in calcLogLikC_prediction)

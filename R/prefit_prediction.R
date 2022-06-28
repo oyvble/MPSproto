@@ -7,7 +7,7 @@
 
 #Helpfunction to fit param start-values (Marker amplification taken into account)
 prefit_prediction = function(c) {
-
+  
   #Prefitting data based on the model for sum of the peak heights  to find proper startvalues for MLE 
   nLocs = c$nLocs #number of markers
   nReps = c$nReps #obtain number of replicates
@@ -25,13 +25,12 @@ prefit_prediction = function(c) {
   useDEG = !all(meanbp==0)
   sumY <- colMeans(sumY) #take average
   meanbp <- colMeans(meanbp) #take average
-   
   if(!useDEG) meanbp = NULL
-  th0 <- NULL
-  tryCatch({
-    #y=sumY;x=meanbp;niter=10;delta=1;offset=0;scale=1
-    th0 <- fitgammamodel(y=sumY,x=meanbp,niter=10,delta=2,offset=0,scale=1,restrictDeg=FALSE)
-  })
-  if(is.null(th0) || any(is.infinite(th0))) stop("Failed to find suitable start values in fitgammamodel!")
+  
+  #CALL FUNCTION TO PREFIT MODEL PARAMEtERS:
+  th0 <- fitSUMmodel(y=sumY,x=meanbp,niter=10,delta=2,restrictDeg=FALSE,model=c$model)
+  
+  #Post handling of start parameters:
+  th0[2] = th0[2]*0.9 #shrinking start value of omega (ALWAYS)
   return(th0)
 }

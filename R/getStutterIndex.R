@@ -8,7 +8,7 @@
 #' n0 stutters are named as either FWBW or BWFW depending on which occuring first in the sequence (hence orientation matters!)
 
 #' @param seqs Input sequences
-#' @param type Stutter type. Supports (BW1,BW2,FW1,FW2,DBW1,FWBW,BWFW)
+#' @param type Stutter type. See getStutterTypeRule for supported types
 #' @param platform Platform type {"MPS","CE"}. NOTE: CE has only LUS based stutter types
 #' @param locus Locus names (necessary for some markers of CE to obtain useful BLMM)
 #' @examples

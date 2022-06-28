@@ -13,6 +13,9 @@ inferNoiseModel = function(sampleNames, locNames, noisedata, AT, print2pdf=NULL)
   sig0 = 3 #signif number in plot
   noiseCap = 1000 #this is theoretical maximum of noise
   
+  #Check that all column names are included  
+  if(!all(c("Locus","Sample","Coverage")%in%colnames(noisedata) )) stop("Missing column name!")
+  
   #Go through each marker and fit model:
   createPlots = !is.null(print2pdf)
   if(createPlots) pdf(paste0(print2pdf,".pdf"))

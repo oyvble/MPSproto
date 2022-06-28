@@ -5,7 +5,8 @@ importFrom("graphics", "abline", "axis", "barplot", "layout", "legend",
 importFrom("stats", "aggregate", "dbeta", "density", "dgamma", "dgeom",
 		 "dist", "dnorm", "na.omit", "nlm", "pbeta", "pgamma", "qbeta", 
 		 "qgamma", "quantile", "rbeta", "rgamma", "rgeom", "ppoints", "rnorm", 
-		 "runif", "sd", "setNames","coef", "predict","as.formula","model.matrix","lm")
+		 "runif", "sd", "setNames","coef", "predict","as.formula","model.matrix","lm",
+		 "dnbinom", "pnbinom")
 importFrom("utils", "adist", "head","tail", "read.delim", "read.table")
 useDynLib(MPSproto)
 exportPattern("^[[:alpha:]]+")

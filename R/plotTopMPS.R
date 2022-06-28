@@ -49,7 +49,7 @@ plotTopMPS = function(MLEobj,DCobj=NULL,locYmax=TRUE,options=NULL,withStutterMod
  par <- MLEobj$fit$par #get estimates parameters
  mx <- par$mx
  mu <- par$mu
- omega <- par$omega
+ #omega <- par$omega
 
  theta_Am <- MLEobj$prepareC$markerEfficiency #Object already stored in mlefit. returned from prepareC function
  names(theta_Am) = MLEobj$prepareC$locNames

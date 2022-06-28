@@ -27,8 +27,15 @@ calcLogLikR_prediction = function(par,c) {
   theta_omega = par$omega
   theta_beta = par$beta
   
-  scale0 = theta_mu*theta_omega^2 #obtain scale param (same for all obs)
-  shape0 = 1/theta_omega^2 #shape for 'full het allele'
+  model = c$model #obtain model
+  if(model=="GA") {
+    scale0 = theta_mu*theta_omega^2 #obtain scale param (same for all obs)
+    shape0 = 1/theta_omega^2 #shape for 'full het allele'
+  } 
+  if(model=="NB") {
+    size0 = theta_mu/(theta_mu*theta_omega^2-1) #obtain size param (same for all obs)
+    shape0 = theta_mu #this is now expectation
+  } 
   
   
   #print(stutterTypes)
@@ -117,7 +124,7 @@ calcLogLikR_prediction = function(par,c) {
         #Calculate shape param
         for(a in seq_len(nAlleles)) {
           #shapev[a] = shapev[a] + outG1contr[jointGind[k]+1,a] * theta_mx[k]; #contr from contr k to allele a. NOTICE THE k+*NOK shift!
-          contr = c$outG1contr[ c$startIndMarker_outG1contr[m] + nAlleles*jointGind[k] + a] * theta_mx[k]; #contr from contr k to allele a. NOTICE THE k+*NOK shift!
+          contr = c$outG1contr[ c$startIndMarker_outG1contr[m] + nAlleles*jointGind[k] + a] * theta_mx[ kindUnknown[k] ]; #contr from contr k to allele a. NOTICE THE k+*NOK shift!
           shapev[a] = shapev[a] + contr
         }
         
@@ -132,7 +139,7 @@ calcLogLikR_prediction = function(par,c) {
         if( c$outG1allele[ startInd_alleles + 1 ] != c$outG1allele[ startInd_alleles + 2 ] ) { #heterozygous variant
           genoProd = 2*genoProd; #multiply by 2  if het. variant
         } 
-      }
+      } #end for each unknown
       #print(jointGind)
  
       #Scaling shape parameter with degrad model
@@ -164,22 +171,28 @@ calcLogLikR_prediction = function(par,c) {
       nDropin = rep(0,nRep0) #count number of dropin
       for (a in seq_len(nAlleles)) { #traverse each observed alleles (also consider the last allele since Q-allele may have PH last allee)
         for(r in seq_len(nRep0)) { #traverse each replicates (observed alleles indicated by PH)
-          
           cind = startIndMarker_nAllelesReps0 + (a-1)*nRep0 + r; #get index of PH (Y_rep,allele is vectorised as : Y11,Y21,Y31,Y12,Y22,Y32,... 
           peak = c$peakHeights[cind]; #obtain coverage/peak
           
           #IF NOT DROPOUT
-          if( peak > 0 ){ #if PH>0 (this is same as PH>=AT since threshold has already been applied)
+          if( peak >= AT0 ){ #if PH>0 (this is same as PH>=AT since threshold has already been applied)
             if(shapev2[a] > 0) { #If contribution and PH>0  					//CONTRIBUTION SET (A)
-              val = val + dgamma(peak,shapev2[a],scale=scale0,log=T) 
+              
+              if(model=="GA") val = val + dgamma(peak,shapev2[a],scale=scale0,log=T) 
+              if(model=="NB") val = val + dnbinom(as.integer(peak),size=size0,mu=shapev2[a],log=T) 
+              
             } else { #If contribution and PH>0 	#DROPIN SET (C)	
-              val = val + c$noiseSize[ cind ]; #likelihood for noise coverage
+              
+              val = val + c$noiseSizeWeight[ cind ]; #likelihood for noise coverage
               nDropin[r] = nDropin[r] + 1; #count dropin for particular replicate															   
             }							
             
             #OTHERWISE IT IS DROPOUT
           } else if(shapev2[a] > 0) { #IF PH missing  and contribution(it't a dropout //CONTRIBUTION SET (B)
-						val = val + pgamma(AT0,shapev2[a],scale=scale0,log.p = T); #Add log(dropout-probability)
+            
+            if(model=="GA") val = val + pgamma(AT0,shapev2[a],scale=scale0,log.p = T); 
+            if(model=="NB") val = val + pnbinom(as.integer(AT0-1), size=size0,mu=shapev2[a],log.p = T); 
+            
           }
         }#end for each reps
       } #end for each alleles
