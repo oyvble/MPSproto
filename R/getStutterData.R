@@ -44,19 +44,23 @@ getStutterData = function(dat, minStuttOccurence=5, platform="MPS",stutterTypes=
   if(verbose) print("Performing indexing for different stutter types...")
   stuttertable <- noisetable <-  NULL #output tables
   for(loc in locs) { #traversing each locus
-#    loc=locs[3]
+#    loc=locs[1]
+    nAmbiguous = 0 #count number of sequences that are removed since being ambiguous stutter type
     if(verbose) print(loc)
     for(sample in samples) {
 # sample=samples[2]
+      #sample="DSU 0137-2"
+      #sub = dat[dat$Locus==loc,]
       sub = dat[dat$Locus==loc & dat$SampleName==sample,,drop=F]
       
       donor = sub$Allele[sub$Dose>0] #donor allele
       isArtefact = sub$Dose==0 #get index of artefact
       artefacts = sub$Allele[isArtefact] #artefacts
       
-      if(length(donor)<2 || length(donor)==nrow(sub)) next  #skip if homozygous OR all alleles are donors (no artefacts)
+      #if(length(donor)==nrow(sub)) next  #skip if homozygous OR all alleles are donors (no artefacts)
+      if(sum(isArtefact)==0) next  #skip if no artefacts
       if(length(donor)>2) stop( paste0("Sample=",sample," Locus=",loc,": Not possible with more than 2 true alleles") )
-      
+#      stop()
       #STEP 1: Obtain canidate stutter types for each artefacts
       candStuttType = rep(NA,length(artefacts)) #get candidate stutter types for each artefact
       candBLMM <- candParental <- candStuttType
@@ -121,11 +125,12 @@ getStutterData = function(dat, minStuttOccurence=5, platform="MPS",stutterTypes=
       }
       
       
-      isOKstutter = !grepl(sep,candStuttType) & !isNoise
+      isOKstutter = !grepl(sep,candStuttType) & !isNoise #obtain stutters to use: Not noise and not multiple stutter candidates
       isOKstutterInd = which(isOKstutter)
       
       #Extract stutter allele info
       for(ind in isOKstutterInd) { #traverse each OK stutter
+        #stop()
         ToInd = which(isArtefact)[ind] #get index of stutter
         
         if(sub$Allele[ToInd]!=artefacts[ind]) stop() # must be true
@@ -141,7 +146,9 @@ getStutterData = function(dat, minStuttOccurence=5, platform="MPS",stutterTypes=
         colnames(newrow) = cn
         stuttertable  = rbind(stuttertable,newrow)
       } #end for each stutter type
+      nAmbiguous = nAmbiguous + sum(!isOKstutter)
     } #end for each sample
+    if(verbose) print(paste0("#Ambiguous stutters removed=",nAmbiguous))
   } #end for each locus
   
   #LAST: IF TOO FEW STUTTER TYPES OBTAINED FOR A MARKER
@@ -150,7 +157,7 @@ getStutterData = function(dat, minStuttOccurence=5, platform="MPS",stutterTypes=
     if(verbose) print("Attaching too few stutter observations to noise data...")
     #create a overview table:
     tab = table(stuttertable$Locus,stuttertable$Type)
-    mustMove = which(tab <= minStuttOccurence & tab>0,arr.ind = TRUE)
+    mustMove = which(tab < minStuttOccurence & tab>0,arr.ind = TRUE) #obtain 
     for(i in seq_len( nrow(mustMove)) ) {
       stuttType = colnames(tab)[mustMove[i,2]]
       stuttLoc = rownames(tab)[mustMove[i,1]]

@@ -216,30 +216,14 @@ Amhat = markerEfficiency$MLE$theta2[locNames] #estimated params</code></pre>
 </div>
 <div id="step-3-preparing-stutter-data-pre-step" class="section level3">
 <h3>Step 3: Preparing stutter data (pre-step)</h3>
-<pre class="r"><code>dat2 = getFilteredData(dat) #obtain subset of data suitable for extracting stutters
-stutterData = getStutterData(dat2,verbose=FALSE) #obtaining stutter candidates (traversing different stutter types)
-stuttDat = stutterData$stutterdata #obtain stutter data
-
-#We remove stutters which can originate from multiple parental alleles
-rmInd = rep(FALSE,nrow(stuttDat))
-for( loc in unique(stuttDat$Locus)) {
-  for( sample in unique(stuttDat$Sample)) {
-# loc=&quot;D2S1338&quot;;sample=&quot;2800M-2&quot;
-    inds  = which(stuttDat$Locus==loc &amp; stuttDat$Sample==sample)
-    stutters = stuttDat$Stutter[inds] #obtain stutter candidates
-    stuttCounts = table(stutters) #count different stutter types
-    rmStutt = names(stuttCounts)[stuttCounts&gt;1] #remove stutters occuring more than once
-    
-    #stuttDat[ inds[stutters%in%rmStutt],] 
-    rmInd[ inds[stutters%in%rmStutt] ] = TRUE
-  }
-}
-stuttDat = stuttDat[rmInd,,drop=FALSE] #update stutter data</code></pre>
+<pre class="r"><code>#dat2 = getFilteredData(dat) #deprecated since already built into the getStutterData function
+stutterData = getStutterData(dat, minStuttOccurence=5, verbose=FALSE) #obtaining stutter candidates (traversing different stutter types)
+stuttDat = stutterData$stutterdata #obtain stutter data</code></pre>
 </div>
 <div id="step-4-infer-stutter-model-and-store-coefficients" class="section level3">
 <h3>Step 4: Infer stutter model and store coefficients</h3>
 <pre class="r"><code>#A beta regression model is used to fit the stutter proportions
-stuttMod = inferStuttRegModel(stuttDat, minStuttOccurence=5)#,print2pdf=&quot;StutterModel&quot;)
+stuttMod = inferStutterModel(stuttDat)#,print2pdf=&quot;StutterModel&quot;)
 stuttModTab = stuttMod$betaTable #obtain coefficient table
 
 #Storing model coefficients in a list
@@ -319,7 +303,9 @@ plotMPS(evidData,refData) #Show in graphical interface</code></pre>
 </div>
 <div id="step-4-specify-hypotheses-for-interpretation" class="section level3">
 <h3>Step 4: Specify hypotheses for interpretation</h3>
-<p>Hypothesis set: minor as POI Hp: ref1 + 1unknown Hd: 2unknowns</p>
+<p>Hypothesis set: minor as POI<br />
+Hp: ref1 + 1 unknown<br />
+Hd: 2 unknowns</p>
 <pre class="r"><code>hypHp = list(NOC=NOC,cond=c(1,0),fst=fst0) #(also include fst here)
 hypHd = list(NOC=NOC,cond=c(0,0),fst=fst0,knownRef=1) #(also include fst here)
 

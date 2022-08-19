@@ -171,8 +171,8 @@ pre code {
 <div id="about-mpsproto-mixture-interpretation" class="section level2">
 <h2>About MPSproto mixture interpretation</h2>
 <p>MPSproto is a R-package for interpreting MPS-STR mixtures. It requires a calibrated model in order to do so. The user can choose between two models for the reads: Gamma or NegativeBinomial. The differences are demonstrated in this tutorial.</p>
-<div id="step-1-preparing-data-for-prediction" class="section level3">
-<h3>Step 1: Preparing data for prediction</h3>
+<div id="step-1-preparing-data" class="section level3">
+<h3>Step 1: Preparing data</h3>
 <pre class="r"><code>library(MPSproto) #load package
 pkg = path.package(&quot;MPSproto&quot;) #get package install folder
 path = paste0(pkg,&quot;/examples&quot;) #path of data to use
@@ -213,13 +213,13 @@ par = getPar(mleHp,mleHd) #get estimated parameters
 LR = getLR(mleHp,mleHd) #get calculated LR (unlogged)
 log10LR = getlog10LR(mleHp,mleHd) #log10 scale
 log10LR</code></pre>
-<pre><code>## [1] 27.8785</code></pre>
+<pre><code>## [1] 17.94112</code></pre>
 <pre class="r"><code>par</code></pre>
 <pre><code>##                Hp           Hd
-## mx1     0.0744885   0.92842352
-## mx2     0.9255115   0.07157648
-## mu    960.1768296 959.82222752
-## omega   0.1324465   0.13681989
+## mx1     0.0797782   0.91695963
+## mx2     0.9202218   0.08304037
+## mu    958.1488481 958.41145815
+## omega   0.1805772   0.17271833
 ## beta    1.0000000   1.00000000</code></pre>
 <pre class="r"><code>#Perform model validation
 validhp = validMLE(mleHp,&quot;Hp&quot;,verbose=FALSE)</code></pre>
@@ -242,14 +242,14 @@ par = getPar(mleHp,mleHd) #get estimated parameters
 LR = getLR(mleHp,mleHd) #get calculated LR (unlogged)
 log10LR = getlog10LR(mleHp,mleHd) #log10 scale
 log10LR</code></pre>
-<pre><code>## [1] 24.27952</code></pre>
+<pre><code>## [1] 1.03039</code></pre>
 <pre class="r"><code>par</code></pre>
-<pre><code>##                 Hp          Hd
-## mx1     0.07266786   0.9286802
-## mx2     0.92733214   0.0713198
-## mu    912.49965867 914.2466270
-## omega   0.26887461   0.2357092
-## beta    1.00000000   1.0000000</code></pre>
+<pre><code>##                 Hp           Hd
+## mx1   6.518583e-02 9.328527e-01
+## mx2   9.348142e-01 6.714728e-02
+## mu    1.684648e+03 1.099200e+03
+## omega 1.013826e+00 5.401461e-01
+## beta  1.000000e+00 1.000000e+00</code></pre>
 <pre class="r"><code>#Perform model validation
 validhp = validMLE(mleHp,&quot;Hp&quot;,verbose=FALSE)</code></pre>
 <pre class="r"><code>validhd = validMLE(mleHd,&quot;Hd&quot;,verbose=FALSE)</code></pre>

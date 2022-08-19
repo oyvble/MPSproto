@@ -2,6 +2,9 @@
 - Optional pre-processing step for MPS sequence data: BayesHammer for sequence correction of noise.
 - Optional to have a dynamic AT (per-sample)?
 
+MPSproto v0.8.1 (Release date: 2022-07-29)
+=============================================
+- Fixed bug in getStutterData causing stutter from homozygous genotypes to be removed.
 
 MPSproto v0.8.0 (Release date: 2022-03-15)
 =============================================
@@ -13,7 +16,7 @@ MPSproto v0.8.0 (Release date: 2022-03-15)
 
 - Updated functions for stutter calibration:
 -> getStutterData function is more comprehensive (also take minStuttOccurence argument)
--> getFilteredData replaced by getStutterData
+-> getFilteredData replaced by getStutterData (deprecated)
 -> inferStuttRegModel renamed to inferStutterModel
 
 MPSproto v0.7.1 (Release date: 2022-03-02)
