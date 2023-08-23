@@ -11,10 +11,14 @@ importMPSsample = function(fn) {
   if(length(lind)==0) lind = grep("loc",tolower(colname),fixed=TRUE) #try another name
   sind = grep("sample",tolower(colname),fixed=TRUE) #sample col-ind
   if(length(sind)>1)  sind = sind[grep("name",tolower(colname[sind]),fixed=TRUE)] #use only sample name
+  
   A_ind = grep("allel",tolower(colname),fixed=TRUE) #allele col-ind
+  if(length(A_ind)==0) A_ind  = grep("seq",tolower(colname),fixed=TRUE) #try another name (sequence)
   H_ind = grep("heig",tolower(colname),fixed=TRUE) #height col-ind
   if(length(H_ind)==0) H_ind  = grep("cov",tolower(colname),fixed=TRUE) #try another name (coverage)
   if(length(H_ind)==0) H_ind  = grep("int",tolower(colname),fixed=TRUE) #try another name  (intensity)
+  if(length(H_ind)==0) H_ind  = grep("read",tolower(colname),fixed=TRUE) #try another name  (read)
+  
   locs = unique(toupper(table[,lind])) #locus names: Use uniques and Convert to upper case
   samplenames = unique(as.character(table[,sind])) #sample names
   outL = list() #Init outList (insert non-empty characters):

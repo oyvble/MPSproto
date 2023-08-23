@@ -223,15 +223,11 @@ genMPSevidence = function(calibration, NOC, popFreq, mu=1000,omega=0.1, beta=1, 
       #SIMULATE Noise alleles in addition:  sequence errors of trueAllele (1 base errors etc)
 
       #NOTE: DROP-IN ALLELES SHOULD NOT BE EXPLAINED AS MODELED STUTTERS!
-      nNoiseAlleles = rgeom(1,nNoiseParam)
+      other_alleles = setdiff(names(popFreq[[loc]]),allelesObs) #get pool of other alleles
+      nNoiseAlleles = min(rgeom(1,nNoiseParam),length(other_alleles))
       if(nNoiseAlleles>0) {
         noiseReads = sample(discrete_range, nNoiseAlleles, prob=pdf_noiseCov,replace=TRUE)
-
-        #if(platform=="CE") {
-        other_alleles = setdiff(names(popFreq[[loc]]),allelesObs) #get pool of other alleles
-        noiseAlleles = sample(other_alleles,min(nNoiseAlleles, length(other_alleles)),replace=FALSE)
-        #} else {
-          
+        noiseAlleles = sample(other_alleles, nNoiseAlleles, replace=FALSE)
         #trueAlleleSeq = convertBracket2seq(trueAllele)
         #mutatedSeq = trueAlleleSeq[mutate]
         #noiseAllele = LUSstrR::convert(mutatedSeq) #convert back to bracket format

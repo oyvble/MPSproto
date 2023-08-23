@@ -11,10 +11,8 @@ getUpperLR = function(mle, scale=TRUE) {
   fst0 = mle$hypothesis$fst
   cond = which(mle$hypothesis$cond>0) #obtain conditionals
   POI = mle$hypothesis$knownRef
-  if(length(POI)!=1) {
-    print("Couldn't calculate upper boundary LR. Returning...")
-    return(NULL)
-  }
+  if(length(POI)!=1) return(NULL) #print("Couldn't calculate upper boundary LR. Returning...")
+    
   locs = names(mle$data)
   rmp = setNames( rep(1,length(locs)) , locs)
   for(loc in locs) {

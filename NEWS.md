@@ -2,6 +2,22 @@
 - Optional pre-processing step for MPS sequence data: BayesHammer for sequence correction of noise.
 - Optional to have a dynamic AT (per-sample)?
 
+
+MPSproto v0.9.2 (Release date: 2023-08-23)
+=============================================
+- Avoid program to crash when using degradation model and having kit selected, and "CE:" prefix format is not used.
+- Improved robusness of generation of noise in genMPSevidence.
+- An error is given if the number of alleles and reads are not the same.
+
+MPSproto v0.9.1 (Release date: 2023-05-11)
+=============================================
+- Fixed bug when assigning values in toolbar in GUI. 
+-> Adding "ncolumns=1" at gui.R:L279.
+
+MPSproto v0.9.0 (Release date: 2022-08-23)
+=============================================
+- Including a GUI for interpretation (gui.R)
+
 MPSproto v0.8.1 (Release date: 2022-07-29)
 =============================================
 - Fixed bug in getStutterData causing stutter from homozygous genotypes to be removed.
@@ -9,15 +25,15 @@ MPSproto v0.8.1 (Release date: 2022-07-29)
 MPSproto v0.8.0 (Release date: 2022-03-15)
 =============================================
 - Implementing Negative Binomial (NB) as an model option in inferEvidence function: model=("GA,"NB")
- -> Following functions changed: calcLogLikC_prediction, prepareC_prediction, prefit_prediction, validMLE, calcLogLikR_prediction
- -> C++ now utilizing the function pnbinom_mu for cumulative calculation of NB
+	- Following functions changed: calcLogLikC_prediction, prepareC_prediction, prefit_prediction, validMLE, calcLogLikR_prediction
+	- C++ now utilizing the function pnbinom_mu for cumulative calculation of NB
 - genMPSevidence: Degradation not possible when generating evidence for MPS
 - fitgammamodel renamed as fitSUMmodel which fits all implemented models (GA/NB).
 
 - Updated functions for stutter calibration:
--> getStutterData function is more comprehensive (also take minStuttOccurence argument)
--> getFilteredData replaced by getStutterData (deprecated)
--> inferStuttRegModel renamed to inferStutterModel
+	- getStutterData function is more comprehensive (also take minStuttOccurence argument)
+	- getFilteredData replaced by getStutterData (deprecated)
+	- inferStuttRegModel renamed to inferStutterModel
 
 MPSproto v0.7.1 (Release date: 2022-03-02)
 =============================================
@@ -32,8 +48,8 @@ MPSproto v0.6 (Release date: 2022-02-14)
 - Now also supporting CE format (Stutter model for BLMM can be included): getStutterIndex updated
 - Take into account that getStutterIndex returns NULL if none of the alleles can have a certain stutter type 
 - Added functions:
- -> getStutterTypeRule: Get motif change and motif rank for given stutter type
- -> genMPSevidence: Used to generate MPS mixture based on a calibrated model
+	- getStutterTypeRule: Get motif change and motif rank for given stutter type
+	- genMPSevidence: Used to generate MPS mixture based on a calibrated model
 
 MPSproto v0.5 (Release date: 2022-01-12)
 =============================================

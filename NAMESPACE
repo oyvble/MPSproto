@@ -1,4 +1,4 @@
-importFrom("grDevices", "dev.new", "dev.off", "pdf")
+importFrom("grDevices", "dev.new", "dev.off", "pdf", "graphics.off", "png")
 importFrom("graphics", "abline", "axis", "barplot", "layout", "legend",
 		 "lines", "mtext", "par", "points", "rect", "segments",
 		 "text","hist")
@@ -7,7 +7,8 @@ importFrom("stats", "aggregate", "dbeta", "density", "dgamma", "dgeom",
 		 "qgamma", "quantile", "rbeta", "rgamma", "rgeom", "ppoints", "rnorm", 
 		 "runif", "sd", "setNames","coef", "predict","as.formula","model.matrix","lm",
 		 "dnbinom", "pnbinom")
-importFrom("utils", "adist", "head","tail", "read.delim", "read.table")
+importFrom("utils", "adist", "head","tail", "read.delim", "read.table", "write.table",
+			"packageVersion")
 useDynLib(MPSproto)
 exportPattern("^[[:alpha:]]+")
 

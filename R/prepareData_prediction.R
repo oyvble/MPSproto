@@ -65,6 +65,7 @@ prepareData_prediction = function(samples,refData=NULL,popFreq=NULL,minF=NULL,no
       
       av = samples[[sample]][[loc]]$adata #get alleles
       hv = samples[[sample]][[loc]]$hdata #get heights
+      if(length(av)!=length(hv)) stop(paste0("At locus ",loc,": Number of alleles in sample was not same as number of heights!"))
       if(length(av)>0) { #if contains alleles empty
         keep = hv>=AT0
         av = av[keep]

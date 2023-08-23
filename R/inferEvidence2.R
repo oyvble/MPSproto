@@ -28,6 +28,10 @@ inferEvidence2 = function(mlefit, calibration=NULL, priorAsLN=FALSE, reOpt=FALSE
   prior_MEAN =  sapply(calibration,function(x) as.numeric(x$markerEff[1]) )
   prior_SD =  sapply(calibration,function(x) as.numeric(x$markerEff[2]) )
 
+  if(length(prior_MEAN)!=length(prior_SD)) {
+    print("Missing SD elements in calibration object. Returning...")
+    return(NULL)
+  }
   #Be sure to get correct order:
   prior_MEAN = prior_MEAN[c_obj$locNames]
   if(priorAsLN)  prior_MEAN =  log(prior_MEAN) #take log if want log-normal assumption
