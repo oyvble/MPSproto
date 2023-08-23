@@ -1,18 +1,27 @@
 MPSproto is a tool which contains a quantitative model for MPS-STR data to deal with complex stutters.
 
+## Installation
+
 Installation for Windows (http://www.euroformix.com/MPSproto): 
 install.packages('http://www.euroformix.com/sites/default/files/MPSproto_0.9.2.zip',repos=NULL,type='win.binary')
 
-Installation from Github (https://github.com/oyvble/MPSproto):
+Alternative installation from Github (https://github.com/oyvble/MPSproto):
 install_github("oyvble/MPSproto")
 
-Download zip file from http://www.euroformix.com/MPSproto (windows only) and "install package local ".
+## Other information
+
+Quick-start with GUI: Open R and run
+``` r
+library(MPSproto) #load package
+pkg = path.package("MPSproto") #get package install folder
+proj = paste0(pkg,"/examples/proj.Rdata") #obtain project file
+gui(proj)
+```
 
 Mathematical details of the model and a tutorial for how to use the tool can be found in the doc folder.
 
 The tool was first time mentioned in the discussion of the paper "A comprehensive characterization of STR-MPS stutter artefacts". 
 - Folder MPSproto_stutterCharPaper in the MPSproto installation directory contains scripts for the calibration and examples of interpretation
-
 
 The allele format for MPS data must be the "Forward_Strand_Bracketed_form" from LUSstr (https://github.com/bioforensics/lusSTR).
 
