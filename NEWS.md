@@ -3,6 +3,14 @@
 - Optional to have a dynamic AT (per-sample)?
 
 
+MPSproto v0.9.3 (Release date: 2023-08-23)
+=============================================
+- Fixed bugs:
+	- The degradation model was turned on even when the user had selected "No" when having kit selected (gui updated).
+	- The program chashed for calculation under Hd when a reference had missing markers (getUpperLR updated).
+    	
+- Updated to handle missing evidence markers (prepareData_prediction,prepareC_prediction).
+
 MPSproto v0.9.2 (Release date: 2023-08-23)
 =============================================
 - Avoid program to crash when using degradation model and having kit selected, and "CE:" prefix format is not used.

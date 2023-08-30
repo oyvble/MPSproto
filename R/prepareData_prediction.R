@@ -61,6 +61,7 @@ prepareData_prediction = function(samples,refData=NULL,popFreq=NULL,minF=NULL,no
       }
 
       #Extract evidence data above defined threshold:
+      samples2[[sample]] = setNames(numeric(),character()) #set as empty by default (IMPORTANT FOR AVOIDING EMPTY MARKER)
       if(is.null(samples[[sample]][[loc]])) next #Skip if no data
       
       av = samples[[sample]][[loc]]$adata #get alleles
@@ -73,31 +74,34 @@ prepareData_prediction = function(samples,refData=NULL,popFreq=NULL,minF=NULL,no
       } 
       samples2[[sample]] = setNames(hv,av)
     } #end for each sample
-    if(length(samples2)==0) next #skip marker if no evid data were present (THIS IS IMPORTANT!)
-
-    alleles = unique(unlist(lapply(samples2,names))) #obtain observed alleles
-    freqs = popFreq[[loc]] #obtain freqs
     
-    #INCLUDE THE POSSIBILITY THAT ALLELES CAN HAVE FORMAT "CE:STRING" (KEEP ONLY STRING)
-    indChange = grep(MPSsymbol,alleles)
-    for(ind in indChange) alleles[ind] = strsplit(alleles[ind],MPSsymbol)[[1]][2] 
-
-    newa <- alleles[!alleles%in%names(freqs)]   #get alleles not in popFreq-table
-    if(length(newa)>0) {
-      tmp <- names(freqs)
-      freqs <- c(freqs,rep(as.numeric(minF),length(newa)))
-      names(freqs) <-  c(tmp,newa)
-      if(verbose) print(paste0("Locus ",loc,": Allele(s) ",paste0(newa,collapse=",")," was inserted with frequency ",minF))
+    alleles = NULL #empty by default
+    if(length(samples2)>0) { #skip marker if no evid data were present (THIS IS IMPORTANT!)
+      alleles = unique(unlist(lapply(samples2,names))) #obtain observed alleles
+      freqs = popFreq[[loc]] #obtain freqs
       
-      if(as.logical(normalize)) { #Normalization is an option
-        freqs <- freqs/sum(freqs) #normalize
-        if(verbose) {
-          print(paste0("New frequencies for locus ",loc))
-          print(freqs) 
+      #INCLUDE THE POSSIBILITY THAT ALLELES CAN HAVE FORMAT "CE:STRING" (KEEP ONLY STRING)
+      indChange = grep(MPSsymbol,alleles)
+      for(ind in indChange) alleles[ind] = strsplit(alleles[ind],MPSsymbol)[[1]][2] 
+  
+      newa <- alleles[!alleles%in%names(freqs)]   #get alleles not in popFreq-table
+      if(length(newa)>0) {
+        tmp <- names(freqs)
+        freqs <- c(freqs,rep(as.numeric(minF),length(newa)))
+        names(freqs) <-  c(tmp,newa)
+        if(verbose) print(paste0("Locus ",loc,": Allele(s) ",paste0(newa,collapse=",")," was inserted with frequency ",minF))
+        
+        if(as.logical(normalize)) { #Normalization is an option
+          freqs <- freqs/sum(freqs) #normalize
+          if(verbose) {
+            print(paste0("New frequencies for locus ",loc))
+            print(freqs) 
+          }
         }
       }
     }
     
+    #Prepare frequencies:
     freqs2 <- freqs #init
     
     #Perform Q-assigniation for freqs and references (depending on sample observations)

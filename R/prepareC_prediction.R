@@ -33,11 +33,17 @@ prepareC_prediction = function(dat, hypothesis, calibration, kit=NULL, platform=
  names(calibration) = toupper(names(calibration))
  locs_dat = names(dat)
  locs_cal = names(calibration)
- if(!all(sort(locs_dat)==sort(locs_cal))) stop("MARKERS MISSING!")
- locs = locs_dat #This is the order that we will use!
+ if(!all(sort(locs_dat)==sort(locs_cal))) {
+   locs_missing = setdiff(locs_cal,locs_dat)
+   txt = paste0("Missing markers not found in evidence: ",paste0(locs_missing,collapse="/"),". Using markers of calibration instead of evidence.")
+   print(txt)
+   locs = locs_cal
+ } else {
+   locs = locs_dat #This is the order that we will use (same as data)
+ } 
  nLocs = length(locs)
  
- sampleNames=names(dat[[1]]$samples)
+ sampleNames=names(dat[[1]]$samples) #obtaining sample names
  nReps = length(sampleNames) #number of replicates
  
  modelDegradation = FALSE
@@ -58,6 +64,7 @@ prepareC_prediction = function(dat, hypothesis, calibration, kit=NULL, platform=
  Gset <- list() 
  for(loc in locs) {
     freq = dat[[loc]]$freq
+    if(length(freq)==0) stop(paste0("Marker ",loc," not found frequency data!"))
     alleles <- names(freq)   
     nn = length(alleles)
     

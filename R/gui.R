@@ -897,7 +897,7 @@ gui = function(envirfile=NULL,envir=NULL) {
      seed0 = optMLE$seed
      if(seed0==0) seed0=NULL #convert seed to NULL (0 means none)
      kit0 = optKit$kit
-     if(kit0=="NONE") kit0 = NULL
+     if(kit0=="NONE" || mod$DEG==FALSE) kit0 = NULL #Dont use degradation
      #print(paste0(optMLE$nDone," random startpoints with variation ",optMLE$delta," are applied in the optimizer.")) 
      
      MPSproto::inferEvidence(set$samples, popFreq, set$refData, hyp, calibration,
@@ -1082,14 +1082,12 @@ gui = function(envirfile=NULL,envir=NULL) {
   }
 
   .f_createreport = function(h,...) {
-    print("Creating report")
-
-    
+    print("NOT IMPLEMENTED")
   }
 
   #helpfunction to calculate extended
   .f_calcext = function(h,...) {
-    
+    print("NOT IMPLEMENTED")
   }
   
   #helpfunction to get different options (a new window)

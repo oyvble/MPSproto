@@ -20,6 +20,7 @@ getUpperLR = function(mle, scale=TRUE) {
     refA = datLoc$refs[[POI]] #get alleles of ref
     freqRef = datLoc$freq[ match(refA,names(datLoc$freq))] #obtain freq of ref-alleles
     
+    if(length(refA)!=2) next #skip marker if not found
     #Obtain number of typed alleles
     nTyped = table(c(unlist(datLoc$refs[cond]),refA)) #obtain typed alleles
     totTyped = sum(nTyped) #total typed alleles
