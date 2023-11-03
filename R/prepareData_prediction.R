@@ -26,7 +26,7 @@ prepareData_prediction = function(samples,refData=NULL,popFreq=NULL,minF=NULL,no
   locs <- names(popFreq) #get loci in popFreq (decides order)
   sampleNames = names(samples) #obtain sample names 
   refNames = names(refData) #obtain reference names
-
+  
   if(is.null(minF)) minF <- min(unlist(popFreq)) #lowest observed frequency if given as NULL
   
   #Update reference data list element order 

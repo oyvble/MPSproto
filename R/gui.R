@@ -972,9 +972,9 @@ gui = function(envirfile=NULL,envir=NULL) {
    nparHp = length(fithp$fit$phihat) #number of unknown params
    nparHd = length(fithd$fit$phihat) #number of unknown params
    
-   #get adjusted loglik ("aic" alike)
-   set$aic_hp <- loglikHp + nparHp
-   set$aic_hd <- loglikHd + nparHd
+   #get adjusted loglik ("aic" alike): penalize with number of (effective) parameters
+   set$adjLL_hp <- loglikHp - nparHp 
+   set$adjLL_hd <- loglikHd - nparHd
    
    #Obtain text
    evidNames = names(set$samples) #extract reference names
@@ -1129,6 +1129,12 @@ gui = function(envirfile=NULL,envir=NULL) {
       
       tab = round(cbind(unlist(parHp),unlist(parHd)),3)
       colnames(tab) = c("Hp","Hd")
+      
+      #add loglik values to table (last row):
+      logLikHp = calcRes$mlefit_hp$fit$loglik
+      logLikHd = calcRes$mlefit_hd$fit$loglik
+      tab = rbind(tab, logLik=round(c(logLikHp,logLikHd),3)) #add to last row
+      
       .showGDFtable(hypsettxt,.addRownameTable(tab,colname = "Param"))
       print(tab) #to console
     
@@ -1227,9 +1233,9 @@ gui = function(envirfile=NULL,envir=NULL) {
     if(nres==0) return() #no results
     
     #Curate table:
-    cns = c("Sample(s)","PoI","Cond","NOC","MOD","DEG","EXT","LR","Mx","AIC")
+    cns = c("Sample(s)","PoI","Cond","NOC","MOD","DEG","EXT","LR","Mx","adj.logLik")
     #x = calcList[[1]]
-    resTable = t(sapply(calcList,function(x) c(x$evidNames,x$POI,x$COND,x$NOC,x$MOD,x$DEG,x$EXT,x$log10LRtxt, x$POImxtxt ,round(x$aic_hd,2))))
+    resTable = t(sapply(calcList,function(x) c(x$evidNames,x$POI,x$COND,x$NOC,x$MOD,x$DEG,x$EXT,x$log10LRtxt, x$POImxtxt ,round(x$adjLL_hd,2))))
     colnames(resTable) = cns
     resTable = cbind(ID=paste0("#",1:nres),resTable)
     

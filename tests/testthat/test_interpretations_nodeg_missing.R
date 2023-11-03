@@ -1,4 +1,4 @@
-#library(MPSproto);library(testthat)
+#library(MPSproto);library(testthat);sessionInfo()
 expect = function(x,y,dig=3) { #helpfunction with specified tolerance
   expect_equal(round(as.numeric(x),dig),round(as.numeric(y),dig))
 }

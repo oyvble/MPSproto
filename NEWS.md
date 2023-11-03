@@ -3,6 +3,10 @@
 - Optional to have a dynamic AT (per-sample)?
 
 
+MPSproto v0.9.4 (Release date: 2023-11-03)
+=============================================
+- Fixed AIC formula issue in GUI (gui.R). Renamed to "adj.logLik"
+
 MPSproto v0.9.3 (Release date: 2023-08-23)
 =============================================
 - Fixed bugs:

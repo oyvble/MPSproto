@@ -5,7 +5,7 @@ MPSproto is a tool which contains a quantitative model for MPS-STR data to deal 
 ## Installation
 
 Installation for Windows (http://www.euroformix.com/MPSproto): 
-install.packages('http://www.euroformix.com/sites/default/files/MPSproto_0.9.3.zip',repos=NULL,type='win.binary')
+install.packages('http://www.euroformix.com/sites/default/files/MPSproto_0.9.4.zip',repos=NULL,type='win.binary')
 
 Alternative installation from Github (https://github.com/oyvble/MPSproto): \
 install_github("oyvble/MPSproto")
