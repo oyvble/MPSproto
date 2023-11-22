@@ -357,6 +357,7 @@ prepareC_prediction = function(dat, hypothesis, calibration, kit=NULL, platform=
  NOU = as.integer(NOC - NOK) #number of unknowns
  nJointCombs = as.integer(nGenos^NOU) #joint combinations
  startIndMarker_nJointCombs = as.integer(c(0,cumsum(nJointCombs)))
+ if(any(is.na(nJointCombs))) stop("The number of combinations to traverse exceeded the maximum. Please reduce the number of alleles or unknowns contributors in the hypothesis.")
  
  #relatedness etc
  NOC=as.integer(NOC)

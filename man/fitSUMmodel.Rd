@@ -4,8 +4,14 @@
 \alias{fitSUMmodel}
 \title{fitSUMmodel}
 \usage{
-fitSUMmodel(y, x = NULL, niter = 10, delta = 1,
-  restrictDeg = FALSE, model = "GA")
+fitSUMmodel(
+  y,
+  x = NULL,
+  niter = 10,
+  delta = 1,
+  restrictDeg = FALSE,
+  model = "GA"
+)
 }
 \arguments{
 \item{y}{Vector with sum peak heights (per loci)}

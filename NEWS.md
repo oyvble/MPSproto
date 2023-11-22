@@ -3,6 +3,11 @@
 - Optional to have a dynamic AT (per-sample)?
 
 
+MPSproto v0.9.5 (Release date: 2023-11-21)
+=============================================
+- Improved implementation of calculating logLik per marker.
+	- Obtained directly using new argument in calcLogLikC_prediction.R: First argument in loglikPrediction_allcomb.cpp is now a vector.
+	
 MPSproto v0.9.4 (Release date: 2023-11-03)
 =============================================
 - Fixed AIC formula issue in GUI (gui.R). Renamed to "adj.logLik"

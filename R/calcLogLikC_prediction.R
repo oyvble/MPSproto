@@ -3,9 +3,10 @@
 #' @param par parameters A list(mx,mu,omega,beta), The ordinary scale (ttheta)
 #' @param c data object (returned from prepareC_calibration)
 #' @param returnOutcome Whether to return all joint genotype outcome values (can be used for Deconvolution and marker-specific values)
+#' @param returnPerMarker Whether to return logLik per marker
 #' @export 
 
-calcLogLikC_prediction = function(par,c, returnOutcome=FALSE) {
+calcLogLikC_prediction = function(par,c, returnOutcome=FALSE, returnPerMarker=FALSE) {
   #keep_threshold A threshold used to 
    #stutter proportions should not exceed this
   
@@ -66,8 +67,9 @@ calcLogLikC_prediction = function(par,c, returnOutcome=FALSE) {
   model = c$model #chosen model is indicated in c object
   cfun_allcomb = paste0("loglikPrediction_allcomb_",model)
   cfun_allcomb2 = paste0("loglikPrediction_allcomb2_",model)
+  logLiki = as.numeric(rep(0,c$nLocs)) #init logLik vector (value per marker)
   if(!returnOutcome) {
-    calc = .C(cfun_allcomb,as.numeric(0), as.integer(c$nJointCombs), c$NOC, c$NOK,
+    calc = .C(cfun_allcomb,logLiki, as.integer(c$nJointCombs), c$NOC, c$NOK,
               as.numeric(par$mx),  as.numeric(par$mu), as.numeric(par$omega), as.numeric(par$beta), as.numeric(theta_Am),
               c$AT,c$fst,c$nNoiseParam,c$noiseSizeWeight,
               c$nLocs, c$nSamples, c$nAlleles, c$startIndMarker_nAlleles, c$startIndMarker_nAllelesReps,
@@ -75,7 +77,12 @@ calcLogLikC_prediction = function(par,c, returnOutcome=FALSE) {
               c$nGenos, c$outG1allele, c$outG1contr, c$startIndMarker_outG1allele, c$startIndMarker_outG1contr, 
               c$nStutters, c$stuttFromInd, c$stuttToInd, c$stuttExp , c$startIndMarker_nStutters,
               c$knownGind) 
-    ret = calc[[1]] #returning loglik
+    ret = calc[[1]] #returning loglik per marker
+    if(!returnPerMarker) {
+      ret = sum(ret) #return logLik (non vector)
+    } else {
+      names(ret) = c$locNames #set names of loglik vector
+    } 
   } else {
     bigsumVEC = rep(0.0,nCombs)
     calc = .C(cfun_allcomb2,as.numeric(bigsumVEC), as.integer(c$nJointCombs), c$NOC, c$NOK,
@@ -133,7 +140,6 @@ calcLogLikC_prediction = function(par,c, returnOutcome=FALSE) {
   }
 
 #calc[[1]]
-  #return log likelihood funciton:
   return(ret)
   
 } #end function

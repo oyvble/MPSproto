@@ -4,7 +4,7 @@
 \alias{calcLogLikC_prediction}
 \title{calcLogLikC_prediction}
 \usage{
-calcLogLikC_prediction(par, c, returnOutcome = FALSE)
+calcLogLikC_prediction(par, c, returnOutcome = FALSE, returnPerMarker = FALSE)
 }
 \arguments{
 \item{par}{parameters A list(mx,mu,omega,beta), The ordinary scale (ttheta)}
@@ -12,6 +12,8 @@ calcLogLikC_prediction(par, c, returnOutcome = FALSE)
 \item{c}{data object (returned from prepareC_calibration)}
 
 \item{returnOutcome}{Whether to return all joint genotype outcome values (can be used for Deconvolution and marker-specific values)}
+
+\item{returnPerMarker}{Whether to return logLik per marker}
 }
 \description{
 Likelihood calculation of (evidence) prediction model (uses calibration info)

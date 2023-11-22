@@ -10,7 +10,7 @@ logLiki(mlefit)
 \item{mlefit}{Fitted object using inferEvidence}
 }
 \value{
-ret A vector with log-likelihood-values for each locus for given model
+A vector with log-likelihood-values for each locus for given model
 }
 \description{
 logLiki returns the likelihood for each markers (based on the MLE results)

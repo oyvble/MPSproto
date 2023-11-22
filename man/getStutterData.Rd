@@ -4,8 +4,13 @@
 \alias{getStutterData}
 \title{getStutterData}
 \usage{
-getStutterData(dat, minStuttOccurence = 5, platform = "MPS",
-  stutterTypes = NULL, verbose = FALSE)
+getStutterData(
+  dat,
+  minStuttOccurence = 5,
+  platform = "MPS",
+  stutterTypes = NULL,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{dat}{Datatable with columns (RefName,SampleName,Locus,Allele,Coverage,Dose)}

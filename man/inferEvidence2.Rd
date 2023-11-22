@@ -4,9 +4,17 @@
 \alias{inferEvidence2}
 \title{inferEvidence2}
 \usage{
-inferEvidence2(mlefit, calibration = NULL, priorAsLN = FALSE,
-  reOpt = FALSE, nDone = 3, delta = 1, steptol = 1e-04,
-  seed = NULL, verbose = FALSE)
+inferEvidence2(
+  mlefit,
+  calibration = NULL,
+  priorAsLN = FALSE,
+  reOpt = FALSE,
+  nDone = 3,
+  delta = 1,
+  steptol = 1e-04,
+  seed = NULL,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{mlefit}{Output object from inferEvidence function}

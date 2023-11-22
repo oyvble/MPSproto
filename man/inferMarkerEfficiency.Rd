@@ -4,10 +4,16 @@
 \alias{inferMarkerEfficiency}
 \title{inferMarkerEfficiency}
 \usage{
-inferMarkerEfficiency(dat, AT, locNames = NULL, runMCMC = FALSE,
-  mleOptions = list(maxIter = 1000, delta = 0.1, steptol = 1e-06, seed =
-  1000), mcmcOptions = list(niter = 10000, delta = 0.025, seed = 1),
-  verbose = FALSE, mleObj = NULL)
+inferMarkerEfficiency(
+  dat,
+  AT,
+  locNames = NULL,
+  runMCMC = FALSE,
+  mleOptions = list(maxIter = 1000, delta = 0.1, steptol = 1e-06, seed = 1000),
+  mcmcOptions = list(niter = 10000, delta = 0.025, seed = 1),
+  verbose = FALSE,
+  mleObj = NULL
+)
 }
 \arguments{
 \item{dat}{Datatable with columns (SampleName,Locus,Coverage)}

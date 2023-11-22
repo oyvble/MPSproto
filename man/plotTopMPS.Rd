@@ -4,8 +4,14 @@
 \alias{plotTopMPS}
 \title{plotTopMPS}
 \usage{
-plotTopMPS(MLEobj, DCobj = NULL, locYmax = TRUE, options = NULL,
-  withStutterModel = TRUE, returnOnly = FALSE)
+plotTopMPS(
+  MLEobj,
+  DCobj = NULL,
+  locYmax = TRUE,
+  options = NULL,
+  withStutterModel = TRUE,
+  returnOnly = FALSE
+)
 }
 \arguments{
 \item{MLEobj}{Fitted object using inferEvidence}

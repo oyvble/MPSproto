@@ -4,9 +4,21 @@
 \alias{inferEvidence}
 \title{inferEvidence}
 \usage{
-inferEvidence(samples, popFreq, refData = NULL, hypothesis, calibration,
-  kit = NULL, platform = "MPS", nDone = 3, delta = 1,
-  steptol = 1e-04, seed = NULL, verbose = FALSE, model = "GA")
+inferEvidence(
+  samples,
+  popFreq,
+  refData = NULL,
+  hypothesis,
+  calibration,
+  kit = NULL,
+  platform = "MPS",
+  nDone = 3,
+  delta = 1,
+  steptol = 1e-04,
+  seed = NULL,
+  verbose = FALSE,
+  model = "GA"
+)
 }
 \arguments{
 \item{samples}{Sample information for evidence profile(s). Must be a list[[sample]][[loc]] = list(adata,hdata)}

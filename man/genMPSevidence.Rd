@@ -4,9 +4,20 @@
 \alias{genMPSevidence}
 \title{genMPSevidence}
 \usage{
-genMPSevidence(calibration, NOC, popFreq, mu = 1000, omega = 0.1,
-  beta = 1, sorted = FALSE, mx = NULL, refData = NULL, nrep = 1,
-  kit = NULL, platform = "MPS")
+genMPSevidence(
+  calibration,
+  NOC,
+  popFreq,
+  mu = 1000,
+  omega = 0.1,
+  beta = 1,
+  sorted = FALSE,
+  mx = NULL,
+  refData = NULL,
+  nrep = 1,
+  kit = NULL,
+  platform = "MPS"
+)
 }
 \arguments{
 \item{calibration}{An object indicating the fitted calibration model (marker efficiency,stutters,noise) (MLE based)}

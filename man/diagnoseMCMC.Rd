@@ -4,8 +4,14 @@
 \alias{diagnoseMCMC}
 \title{diagnoseMCMC}
 \usage{
-diagnoseMCMC(posttheta, showTrace = FALSE, xlim = NULL, MEAN = NULL,
-  SD = NULL, fitBeta = FALSE)
+diagnoseMCMC(
+  posttheta,
+  showTrace = FALSE,
+  xlim = NULL,
+  MEAN = NULL,
+  SD = NULL,
+  fitBeta = FALSE
+)
 }
 \arguments{
 \item{posttheta}{Matrix with posterior samples (n x p)}

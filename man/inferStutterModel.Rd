@@ -4,8 +4,13 @@
 \alias{inferStutterModel}
 \title{inferStutterModel}
 \usage{
-inferStutterModel(stutterdata, print2pdf = NULL, signifLevel = 0.05,
-  addValid = FALSE, modPrec = FALSE)
+inferStutterModel(
+  stutterdata,
+  print2pdf = NULL,
+  signifLevel = 0.05,
+  addValid = FALSE,
+  modPrec = FALSE
+)
 }
 \arguments{
 \item{stutterdata}{Datatable with columns ("Locus","Type","BLMM","Prop.)}

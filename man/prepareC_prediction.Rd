@@ -4,8 +4,14 @@
 \alias{prepareC_prediction}
 \title{prepareC_prediction}
 \usage{
-prepareC_prediction(dat, hypothesis, calibration, kit = NULL,
-  platform = "MPS", model = "GA")
+prepareC_prediction(
+  dat,
+  hypothesis,
+  calibration,
+  kit = NULL,
+  platform = "MPS",
+  model = "GA"
+)
 }
 \arguments{
 \item{dat}{A list returned from prepareData_prediction function (includes evididence,reference,frequency data)}

@@ -4,9 +4,17 @@
 \alias{prepareData_prediction}
 \title{prepareData_prediction}
 \usage{
-prepareData_prediction(samples, refData = NULL, popFreq = NULL,
-  minF = NULL, normalize = FALSE, AT = NULL, fillHomGen = TRUE,
-  verbose = FALSE, doQ = TRUE)
+prepareData_prediction(
+  samples,
+  refData = NULL,
+  popFreq = NULL,
+  minF = NULL,
+  normalize = FALSE,
+  AT = NULL,
+  fillHomGen = TRUE,
+  verbose = FALSE,
+  doQ = TRUE
+)
 }
 \arguments{
 \item{samples}{A list with evidence profiles [[sample]][[locus]]$adata/hdata}

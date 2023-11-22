@@ -4,8 +4,13 @@
 \alias{validMLE}
 \title{validMLE}
 \usage{
-validMLE(mlefit, plottitle = "PP-plot", alpha = 0.01,
-  createplot = TRUE, verbose = TRUE)
+validMLE(
+  mlefit,
+  plottitle = "PP-plot",
+  alpha = 0.01,
+  createplot = TRUE,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{mlefit}{Fitted object using inferEvidence function.}

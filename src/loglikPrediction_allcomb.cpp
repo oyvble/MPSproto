@@ -46,7 +46,7 @@ void loglikPrediction_allcomb_GA(double *logLik, int *nJointCombs, int *NOC, int
 	double const0 = log(scale0); //constant 2 (used in dgamma)
 	double shape0 = 1/omegasq; // //theta_Am[locind]/omegasq; //shape for 'full het allele'    
 
-	//Calculating the loglik (over all markers), which is returned
+	//Calculating the loglik (per marker), which is returned
 	const double smalltol = 1.0e-30; //a tiny number > 0 (avoiding zero roundoff errors)
 	for(int locind=0; locind< *nMarkers; locind++) {	//for each marker:
 	
@@ -244,7 +244,7 @@ void loglikPrediction_allcomb_GA(double *logLik, int *nJointCombs, int *NOC, int
 		   bigsum += val;
 		   //bigsumVEC[startIndMarker_nJointCombs0 + iter] = val; //insert element
 		} //end for each combination iterations (bigsum)
-		logLik[0] += log(bigsum); //calculate logLik by adding log(innerSUM)	
+		logLik[locind] = log(bigsum); //calculate logLik by adding log(innerSUM)	
 
 	} //end for each marker
 } //end main function
@@ -480,8 +480,7 @@ void loglikPrediction_allcomb_NB(double *logLik, int *nJointCombs, int *NOC, int
 		   bigsum += val;
 		   //bigsumVEC[startIndMarker_nJointCombs0 + iter] = val; //insert element
 		} //end for each combination iterations (bigsum)
-		logLik[0] += log(bigsum); //calculate logLik by adding log(innerSUM)	
-
+		logLik[locind] = log(bigsum); //calculate logLik by adding log(innerSUM)	
 	} //end for each marker
 } //end main function
 

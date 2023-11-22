@@ -4,8 +4,15 @@
 \alias{optimizeLik}
 \title{optimizeLik}
 \usage{
-optimizeLik(logLik, phi0, maxIter = NULL, delta = NULL,
-  steptol = NULL, iterlim = NULL, verbose = TRUE)
+optimizeLik(
+  logLik,
+  phi0,
+  maxIter = NULL,
+  delta = NULL,
+  steptol = NULL,
+  iterlim = NULL,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{logLik}{Objective function to optimize}
