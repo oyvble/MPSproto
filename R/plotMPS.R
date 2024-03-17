@@ -56,15 +56,18 @@ plotMPS = function(mixData,refData=NULL,AT=NULL,ST=NULL,grpsymbol=":",locYmax=TR
 
     if(is.null(edat) && is.null(rdat)  ) next #skip if no data (evid or ref)
 
-    av = edat$adata
+    av = edat$adata #get original allele strings
     hv = edat$hdata
-    av2 = unique(unlist(rdat))
-    adda = av2[!av2%in%av] 
-
-    #add missing:
+    avCErm = av #get allele with CE grouping removed
+    if(any(grepl(grpsymbol,avCErm))) avCErm = sapply(strsplit(av,grpsymbol),function(x) x[2])
+    
+    #add missing (found in refs but not in evidence:
+    avRefs = unique(unlist(rdat))
+    adda = avRefs[!avRefs%in%avCErm] 
     if(length(adda)>0) {
      av = c(av,adda)
-     hv  =  c(hv, rep(0,length(adda)) )
+     avCErm = c(avCErm,adda) #remember to also add this
+     hv = c(hv, rep(0,length(adda)) )
     }
  
     if(length(av)==0) { #add dummy variables if no alleles
@@ -89,12 +92,12 @@ plotMPS = function(mixData,refData=NULL,AT=NULL,ST=NULL,grpsymbol=":",locYmax=TR
     #ref text under each allele (follow original av)
     reftxt <- rep("",length(av))
     if(nrefs>0) {
-     for(rr in 1:nrefs) { #for each ref
-      indadd = which(av%in%unlist(rdat[[rr]])) #index of alleles to add to text
-      hasprevval = indadd[nchar(reftxt[indadd])>0] #indice to add backslash (sharing alleles)
-      reftxt[ hasprevval ] = paste0(reftxt[ hasprevval ],"/")      
-      reftxt[indadd] = paste0( reftxt[indadd], rr)
-     }
+      for(rr in 1:nrefs) { #for each ref
+       indadd = which(avCErm%in%unlist(rdat[[rr]])) #index of alleles to add to text
+       hasprevval = indadd[nchar(reftxt[indadd])>0] #indice to add backslash (sharing alleles)
+       reftxt[ hasprevval ] = paste0(reftxt[ hasprevval ],"/")      
+       reftxt[indadd] = paste0( reftxt[indadd], rr)
+      }
     }
   df = rbind(df, cbind(ss,loc,av,hv,reftxt,av1,av2) )
   } #end for each loci

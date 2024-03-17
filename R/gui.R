@@ -773,7 +773,10 @@ gui = function(envirfile=NULL,envir=NULL) {
       optFreq = get("optFreq",envir=mmTK)
       fst = optFreq$fst #obtain selected fst
       normalize = as.logical(optFreq$normalize)
+      freqsize = optFreq$freqsize
       minF = optFreq$minF
+      if(!is.null(minF) && minF==0) minF = NULL
+      if(!is.null(freqsize) && freqsize>0) minF = 5/(2*freqsize) #rule 5/2n rule
       hyp = list(hp = list(NOC=nC_hp,condOrder=condOrder_hp,knownRef=knownref_hp,fst=fst,normalize=normalize,minF=minF),
                  hd = list(NOC=nC_hd,condOrder=condOrder_hd,knownRef=knownref_hd,fst=fst,normalize=normalize,minF=minF))
 
@@ -1235,7 +1238,8 @@ gui = function(envirfile=NULL,envir=NULL) {
     #Curate table:
     cns = c("Sample(s)","PoI","Cond","NOC","MOD","DEG","EXT","LR","Mx","adj.logLik")
     #x = calcList[[1]]
-    resTable = t(sapply(calcList,function(x) c(x$evidNames,x$POI,x$COND,x$NOC,x$MOD,x$DEG,x$EXT,x$log10LRtxt, x$POImxtxt ,round(x$adjLL_hd,2))))
+    getRoundedAdjLL = function(val) ifelse(is.null(val),"", round(val,2)) #helpfunction to avoid crash
+    resTable = t(sapply(calcList,function(x) c(x$evidNames,x$POI,x$COND,x$NOC,x$MOD,x$DEG,x$EXT,x$log10LRtxt, x$POImxtxt ,getRoundedAdjLL(x$adjLL_hd))))
     colnames(resTable) = cns
     resTable = cbind(ID=paste0("#",1:nres),resTable)
     

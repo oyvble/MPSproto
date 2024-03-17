@@ -3,6 +3,18 @@
 - Optional to have a dynamic AT (per-sample)?
 
 
+Suggestion: make a separate function called "getNoiseData"
+
+
+MPSproto v0.9.7 (Release date: 2024-03-14)
+=============================================
+- Fixed bug in GUI causing default minimum frequency to be zero (it should be the minimum observed instead). Also the minimum frequency based on database size did not apply.
+- Updated plotMPS to make it possible to view reference profiles correctly when CE is given to MPS data (CE:STRING)
+
+MPSproto v0.9.6 (Release date: 2023-11-24)
+=============================================
+- Fixed GUI issue when earlier projects with calculations were loaded (adj.LL element not found)
+
 MPSproto v0.9.5 (Release date: 2023-11-21)
 =============================================
 - Improved implementation of calculating logLik per marker.
